@@ -8,5 +8,5 @@ _move_name = "Blaze"
 _type = 2
 _attack_power = 90
 _attempts = 1
-_accuracy = 100
+_accuracy = 40
 metadata/_custom_type_script = "uid://d2wg76v3vg2yt"
