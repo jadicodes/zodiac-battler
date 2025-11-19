@@ -1,4 +1,19 @@
-[gd_scene format=3 uid="uid://bi4etr5s1v3kc"]
+[gd_scene load_steps=7 format=3 uid="uid://bi4etr5s1v3kc"]
+
+[ext_resource type="Script" uid="uid://lxbgsksdckqd" path="res://battle_arena/battle_arena.gd" id="1_r4nqg"]
+[ext_resource type="Resource" uid="uid://c8u3hw5eqn458" path="res://monsters/breed/embermane.tres" id="2_lj2wh"]
+[ext_resource type="Script" uid="uid://c6p10u1cg3yux" path="res://monsters/monster.gd" id="3_ewqu3"]
+[ext_resource type="Resource" uid="uid://bmt1iiqphqefe" path="res://monsters/breed/harius.tres" id="4_etk7j"]
+
+[sub_resource type="Resource" id="Resource_lj2wh"]
+script = ExtResource("3_ewqu3")
+_breed = ExtResource("2_lj2wh")
+metadata/_custom_type_script = "uid://c6p10u1cg3yux"
+
+[sub_resource type="Resource" id="Resource_ewqu3"]
+script = ExtResource("3_ewqu3")
+_breed = ExtResource("4_etk7j")
+metadata/_custom_type_script = "uid://c6p10u1cg3yux"
 
 [node name="BattleArena" type="Control"]
 layout_mode = 3
@@ -7,3 +22,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_r4nqg")
+_monster_opponent = SubResource("Resource_lj2wh")
+_monster_self = SubResource("Resource_ewqu3")

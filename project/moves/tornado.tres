@@ -8,5 +8,5 @@ _move_name = "Tornado"
 _type = 1
 _attack_power = 60
 _attempts = 1
-_accuract = 100
+_accuracy = 100
 metadata/_custom_type_script = "uid://d2wg76v3vg2yt"

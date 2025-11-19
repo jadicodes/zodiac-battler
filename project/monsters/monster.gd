@@ -10,6 +10,21 @@ func _ready() -> void:
 	_remaining_health_points = _breed.get_health_points()
 
 
+func use_move(target: Monster, move: Move) -> void:
+	print("Using move " + move._move_name)
+	var accuracy: int = move.get_accuracy()
+	var attack_power: int = move.get_attack_power()
+	var random_number = randi_range(0, 100)
+	if random_number < accuracy:
+		@warning_ignore("integer_division")
+		target.take_damage(attack_power/2)
+
+
+func take_damage(damage_amount: int) -> void:
+	_remaining_health_points -= damage_amount
+	print(get_monster_name() + " lost " + str(damage_amount) + " hp.")
+
+
 func get_monster_name() -> String:
 	return _breed.get_monster_name()
 
