@@ -47,3 +47,14 @@ func get_total_health_points() -> int:
 
 func get_speed() -> int:
 	return _breed.get_speed()
+
+
+static func order_by_speed(monsters: Array[Monster]) -> Array[Monster]:
+	var sorted_monsters := monsters.duplicate()
+	sorted_monsters.sort_custom(compare_speed)
+
+	return sorted_monsters
+
+
+static func compare_speed(a: Monster, b: Monster) -> bool:
+	return a.get_speed() > b.get_speed()
