@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Breed" load_steps=4 format=3 uid="uid://c8u3hw5eqn458"]
+
+[ext_resource type="Script" uid="uid://d2wg76v3vg2yt" path="res://moves/move.gd" id="1_x2p3v"]
+[ext_resource type="Resource" uid="uid://cgmxq7kmfgntw" path="res://moves/blaze.tres" id="2_3rkmc"]
+[ext_resource type="Script" uid="uid://demay78bjjpnr" path="res://monsters/breed/breed.gd" id="2_g0mny"]
+
+[resource]
+script = ExtResource("2_g0mny")
+_monster_name = "Embermane"
+_type = 2
+_moves = Array[ExtResource("1_x2p3v")]([ExtResource("2_3rkmc")])
+_health_points = 80
+_speed = 40
+metadata/_custom_type_script = "uid://demay78bjjpnr"
