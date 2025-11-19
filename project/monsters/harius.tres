@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Breed" load_steps=3 format=3 uid="uid://bmt1iiqphqefe"]
+
+[ext_resource type="Script" uid="uid://d2wg76v3vg2yt" path="res://moves/move.gd" id="1_38s86"]
+[ext_resource type="Script" uid="uid://demay78bjjpnr" path="res://monsters/breed.gd" id="1_leps3"]
+
+[resource]
+script = ExtResource("1_leps3")
+metadata/_custom_type_script = "uid://demay78bjjpnr"
