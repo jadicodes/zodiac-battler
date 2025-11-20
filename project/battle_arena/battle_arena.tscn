@@ -26,13 +26,29 @@ script = ExtResource("1_r4nqg")
 _monster_opponent = SubResource("Resource_lj2wh")
 _monster_self = SubResource("Resource_ewqu3")
 
-[node name="Button" type="Button" parent="."]
+[node name="GridContainer" type="GridContainer" parent="."]
 layout_mode = 0
-offset_left = 660.0
-offset_top = 435.0
-offset_right = 776.0
-offset_bottom = 488.0
-theme_override_font_sizes/font_size = 32
-text = "Attack!"
+offset_right = 40.0
+offset_bottom = 40.0
+columns = 2
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[node name="Move1" type="Button" parent="GridContainer"]
+layout_mode = 2
+text = "Attack1"
+
+[node name="Move2" type="Button" parent="GridContainer"]
+layout_mode = 2
+text = "Attack2"
+
+[node name="Move3" type="Button" parent="GridContainer"]
+layout_mode = 2
+text = "Attack3"
+
+[node name="Move4" type="Button" parent="GridContainer"]
+layout_mode = 2
+text = "Attack4"
+
+[connection signal="pressed" from="GridContainer/Move1" to="." method="_on_move_button_pressed" binds= [0]]
+[connection signal="pressed" from="GridContainer/Move2" to="." method="_on_move_button_pressed" binds= [1]]
+[connection signal="pressed" from="GridContainer/Move3" to="." method="_on_move_button_pressed" binds= [2]]
+[connection signal="pressed" from="GridContainer/Move4" to="." method="_on_move_button_pressed" binds= [3]]

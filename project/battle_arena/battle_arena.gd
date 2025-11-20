@@ -5,6 +5,7 @@ extends Control
 
 var _game_active := true
 
+
 func _ready() -> void:
 	_monster_opponent.initialize()
 	_monster_self.initialize()
@@ -12,16 +13,16 @@ func _ready() -> void:
 	_monster_self.on_faint.connect(_lose)
 
 
-func _process_turn(monsters: Array[Monster]) -> void:
+func _process_turn(monsters: Array[Monster], self_move_index: int) -> void:
 	var turn_order := Monster.order_by_speed(monsters)
 
-	if not _game_active:
-		return
-	turn_order[0].use_move(turn_order[1], turn_order[0].get_moves()[0])
-
-	if not _game_active:
-		return
-	turn_order[1].use_move(turn_order[0], turn_order[1].get_moves()[0])
+	for i in len(turn_order):
+		if not _game_active:
+			return
+		if turn_order[i].get_belongs_to_player():
+			turn_order[i].use_move(turn_order[1-i], self_move_index)
+		else:
+			turn_order[i].use_move(turn_order[1-i], randi_range(0,3))
 
 
 func _win() -> void:
@@ -34,6 +35,5 @@ func _lose() -> void:
 	print("YOU LOSE :'(")
 
 
-func _on_button_pressed() -> void:
-	if _game_active:
-		_process_turn([_monster_opponent, _monster_self])
+func _on_move_button_pressed(move_index: int) -> void:
+	_process_turn([_monster_opponent, _monster_self], move_index)
