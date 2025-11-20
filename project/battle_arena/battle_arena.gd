@@ -11,9 +11,6 @@ func _ready() -> void:
 	_monster_opponent.on_faint.connect(_win)
 	_monster_self.on_faint.connect(_lose)
 
-	while _game_active:
-		_process_turn([_monster_opponent, _monster_self])
-
 
 func _process_turn(monsters: Array[Monster]) -> void:
 	var turn_order := Monster.order_by_speed(monsters)
@@ -35,3 +32,8 @@ func _win() -> void:
 func _lose() -> void:
 	_game_active = false
 	print("YOU LOSE :'(")
+
+
+func _on_button_pressed() -> void:
+	if _game_active:
+		_process_turn([_monster_opponent, _monster_self])

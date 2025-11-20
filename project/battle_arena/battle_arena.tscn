@@ -25,3 +25,14 @@ grow_vertical = 2
 script = ExtResource("1_r4nqg")
 _monster_opponent = SubResource("Resource_lj2wh")
 _monster_self = SubResource("Resource_ewqu3")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 660.0
+offset_top = 435.0
+offset_right = 776.0
+offset_bottom = 488.0
+theme_override_font_sizes/font_size = 32
+text = "Attack!"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
