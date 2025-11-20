@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bi5q4u2esn6us"]
+
+[ext_resource type="Script" uid="uid://chnj814rebwya" path="res://battle_arena/health_bar.gd" id="1_btyba"]
+
+[node name="HealthBar" type="ProgressBar"]
+show_percentage = false
+script = ExtResource("1_btyba")
