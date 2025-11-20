@@ -1,6 +1,8 @@
 class_name Textbox
 extends Control
 
+signal state_changed(state: State)
+
 enum State {
 	READY,
 	READING,
@@ -25,12 +27,16 @@ func show_text(text: String) -> void:
 	_change_state(State.READING)
 
 
-func skip() -> void:
-	_change_state(State.FINISHED)
+func advance() -> void:
+	match _current_state:
+		State.READING:
+			_change_state(State.FINISHED)
+		State.FINISHED:
+			_change_state(State.READY)
 
 
-func available() -> bool:
-	return _current_state in [State.READY, State.FINISHED]
+func get_state() -> State:
+	return _current_state
 
 
 func _create_tween() -> void:
@@ -59,3 +65,5 @@ func _change_state(state: State) -> void:
 		State.FINISHED:
 			_label.visible_ratio = 1.0
 			_tween.pause()
+
+	state_changed.emit(_current_state)

@@ -1,9 +1,10 @@
 class_name Monster
 extends Resource
 
-signal on_use_move(target: Monster, move: int)
-signal on_take_damage(damage_amount: int)
-signal on_faint
+signal move_used(target: Monster, move: Move)
+signal move_missed(target: Monster, move: Move)
+signal damage_taken(damage_amount: int)
+signal fainted
 
 @export var _breed: Breed
 
@@ -17,7 +18,7 @@ func initialize() -> void:
 
 func use_move(target: Monster, move_index: int) -> void:
 	var move = get_moves()[move_index]
-	on_use_move.emit(target, move)
+	move_used.emit(target, move)
 	print(get_monster_name() + " using move " + move._move_name)
 	var accuracy: int = move.get_accuracy()
 	var attack_power: int = move.get_attack_power()
@@ -27,17 +28,18 @@ func use_move(target: Monster, move_index: int) -> void:
 		@warning_ignore("integer_division")
 		target.take_damage(attack_power / 10)
 	else:
+		move_missed.emit(target, move)
 		print("Missed...")
 
 
 func take_damage(damage_amount: int) -> void:
 	print(_remaining_health_points, " - ", damage_amount)
 	_remaining_health_points -= damage_amount
-	on_take_damage.emit(damage_amount)
+	damage_taken.emit(damage_amount)
 	print(get_monster_name() + " lost " + str(damage_amount) + " hp.")
 
 	if _remaining_health_points <= 0:
-		on_faint.emit()
+		fainted.emit()
 
 
 func get_monster_name() -> String:
