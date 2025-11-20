@@ -33,18 +33,22 @@ offset_bottom = 40.0
 columns = 2
 
 [node name="Move1" type="Button" parent="GridContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "Attack1"
 
 [node name="Move2" type="Button" parent="GridContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "Attack2"
 
 [node name="Move3" type="Button" parent="GridContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "Attack3"
 
 [node name="Move4" type="Button" parent="GridContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "Attack4"
 

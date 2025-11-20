@@ -5,12 +5,17 @@ extends Control
 
 var _game_active := true
 
+@onready var _move_buttons: Array[Button] = [%Move1, %Move2, %Move3, %Move4]
 
 func _ready() -> void:
 	_monster_opponent.initialize()
 	_monster_self.initialize()
 	_monster_opponent.on_faint.connect(_win)
 	_monster_self.on_faint.connect(_lose)
+
+	var moves := _monster_self.get_moves()
+	for i in len(_move_buttons):
+		_move_buttons[i].text = moves[i].get_move_name()
 
 
 func _process_turn(monsters: Array[Monster], self_move_index: int) -> void:
