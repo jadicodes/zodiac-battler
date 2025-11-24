@@ -30,6 +30,10 @@ advance_text={
 ]
 }
 
+[internationalization]
+
+locale/translations=PackedStringArray("res://i18n/translations.en_US.translation")
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"

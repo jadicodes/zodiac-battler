@@ -82,16 +82,16 @@ func _opponent_decrease_health(damage_amount: int) -> void:
 
 
 func _add_move_used_message(target: Monster, move: Move, monster: Monster) -> void:
-	_message_queue.append("%s used %s on %s" % [monster.get_monster_name(), move.get_move_name(), target.get_monster_name()])
+	_message_queue.append(tr("MOVE_USED") % [monster.get_monster_name(), move.get_move_name(), target.get_monster_name()])
 
 
 func _add_move_missed_message(_target: Monster, _move: Move, monster: Monster) -> void:
-	_message_queue.append("%s's move missed." % [monster.get_monster_name()])
+	_message_queue.append(tr("MOVE_MISSED") % [monster.get_monster_name()])
 
 
 func _add_damage_taken_message(damage_amount: int, monster: Monster) -> void:
-	_message_queue.append("%s took %d damage." % [monster.get_monster_name(), damage_amount])
+	_message_queue.append(tr("DAMAGE_TAKEN") % [monster.get_monster_name(), damage_amount])
 
 
 func _add_fainted_message(monster: Monster) -> void:
-	_message_queue.append("%s has fainted." % monster.get_monster_name())
+	_message_queue.append(tr("FAINTED") % monster.get_monster_name())
