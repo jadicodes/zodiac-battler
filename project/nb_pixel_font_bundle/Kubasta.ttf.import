@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://gptd25r7q4jy"
-path="res://.godot/imported/Habbo.ttf-acbe7f71db52191be566f447f603a628.fontdata"
+uid="uid://c1sp1s41dpngu"
+path="res://.godot/imported/Kubasta.ttf-230dc2a432893d5d2a89d35b4ecef225.fontdata"
 
 [deps]
 
-source_file="res://battle_arena/textbox/nb_pixel_font_bundle/Habbo.ttf"
-dest_files=["res://.godot/imported/Habbo.ttf-acbe7f71db52191be566f447f603a628.fontdata"]
+source_file="res://nb_pixel_font_bundle/Kubasta.ttf"
+dest_files=["res://.godot/imported/Kubasta.ttf-230dc2a432893d5d2a89d35b4ecef225.fontdata"]
 
 [params]
 

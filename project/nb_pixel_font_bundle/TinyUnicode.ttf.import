@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://c1sp1s41dpngu"
-path="res://.godot/imported/Kubasta.ttf-422eb454f213a59f61ef49b8b343f8da.fontdata"
+uid="uid://dtwandx6wns2f"
+path="res://.godot/imported/TinyUnicode.ttf-9572300fb94a629ba96ec7238b16f6c7.fontdata"
 
 [deps]
 
-source_file="res://battle_arena/textbox/nb_pixel_font_bundle/Kubasta.ttf"
-dest_files=["res://.godot/imported/Kubasta.ttf-422eb454f213a59f61ef49b8b343f8da.fontdata"]
+source_file="res://nb_pixel_font_bundle/TinyUnicode.ttf"
+dest_files=["res://.godot/imported/TinyUnicode.ttf-9572300fb94a629ba96ec7238b16f6c7.fontdata"]
 
 [params]
 

@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://dtwandx6wns2f"
-path="res://.godot/imported/TinyUnicode.ttf-a83ee13960e6c14966a0c267cfe57329.fontdata"
+uid="uid://gptd25r7q4jy"
+path="res://.godot/imported/Habbo.ttf-77b2dcf1cf453568ab90aa7761aec9c8.fontdata"
 
 [deps]
 
-source_file="res://battle_arena/textbox/nb_pixel_font_bundle/TinyUnicode.ttf"
-dest_files=["res://.godot/imported/TinyUnicode.ttf-a83ee13960e6c14966a0c267cfe57329.fontdata"]
+source_file="res://nb_pixel_font_bundle/Habbo.ttf"
+dest_files=["res://.godot/imported/Habbo.ttf-77b2dcf1cf453568ab90aa7761aec9c8.fontdata"]
 
 [params]
 

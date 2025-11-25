@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://c5og4m5hglu7s" path="res://battle_arena/background.png" id="5_4layi"]
 [ext_resource type="Texture2D" uid="uid://c8dwb7jo0e1jy" path="res://icon.svg" id="5_etk7j"]
 [ext_resource type="PackedScene" uid="uid://bny50y62exih" path="res://battle_arena/textbox/textbox.tscn" id="5_ewqu3"]
-[ext_resource type="PackedScene" uid="uid://pw78k5es24iv" path="res://battle_arena/player_info/PlayerInfo.tscn" id="7_uvb1j"]
+[ext_resource type="PackedScene" uid="uid://pw78k5es24iv" path="res://battle_arena/player_info/player_info.tscn" id="7_uvb1j"]
 [ext_resource type="PackedScene" uid="uid://bhg6lanvbq8qd" path="res://battle_arena/move_buttons/move_buttons.tscn" id="8_4layi"]
 [ext_resource type="Script" uid="uid://dvtydvip1p0w1" path="res://battle_arena/message_queue/message_queue.gd" id="8_akadq"]
 

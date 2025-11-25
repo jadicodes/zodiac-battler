@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bhg6lanvbq8qd"]
 
-[ext_resource type="FontFile" uid="uid://gptd25r7q4jy" path="res://battle_arena/textbox/nb_pixel_font_bundle/Habbo.ttf" id="1_djpvq"]
+[ext_resource type="FontFile" uid="uid://gptd25r7q4jy" path="res://nb_pixel_font_bundle/Habbo.ttf" id="1_djpvq"]
 [ext_resource type="Script" uid="uid://c74m30yb88ftw" path="res://battle_arena/move_buttons/move_buttons.gd" id="1_fmeqp"]
 
 [node name="MoveButtons" type="Control"]

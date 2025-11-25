@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bny50y62exih"]
 
 [ext_resource type="Script" uid="uid://dd2pc1dv5f1x6" path="res://battle_arena/textbox/textbox.gd" id="1_ayp6a"]
-[ext_resource type="FontFile" uid="uid://gptd25r7q4jy" path="res://battle_arena/textbox/nb_pixel_font_bundle/Habbo.ttf" id="1_j31qi"]
+[ext_resource type="FontFile" uid="uid://gptd25r7q4jy" path="res://nb_pixel_font_bundle/Habbo.ttf" id="1_j31qi"]
 
 [node name="Textbox" type="Control"]
 custom_minimum_size = Vector2(0, 100)
