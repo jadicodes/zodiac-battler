@@ -18,7 +18,8 @@ func _ready() -> void:
 	_monster_opponent.damage_taken.connect(_opponent_decrease_health)
 	%SelfHealthBar.on_game_start(_monster_self.get_total_health_points())
 	%OpponentHealthBar.on_game_start(_monster_opponent.get_total_health_points())
-	_message_queue.queue_depleted.connect(_reenable_move_buttons)
+	_message_queue.queue_started.connect(_disable_move_buttons)
+	_message_queue.queue_depleted.connect(_enable_move_buttons)
 
 	for monster in [_monster_opponent, _monster_self]:
 		monster.move_used.connect(_add_move_used_message.bind(monster))
@@ -29,6 +30,8 @@ func _ready() -> void:
 	var moves := _monster_self.get_moves()
 	for i in len(_move_buttons):
 		_move_buttons[i].text = moves[i].get_move_name()
+
+	_message_queue.add_message(Message.new(tr("AWAIT_CHOICE")))
 
 
 func _process(_delta: float) -> void:
@@ -51,6 +54,8 @@ func _process_turn(monsters: Array[Monster], self_move_index: int) -> void:
 		else:
 			turn_order[i].use_move(turn_order[1-i], randi_range(0,3))
 
+	_message_queue.add_message(Message.new(tr("AWAIT_CHOICE")))
+
 
 func _win() -> void:
 	_game_active = false
@@ -66,9 +71,14 @@ func _on_move_button_pressed(move_index: int) -> void:
 	_process_turn([_monster_opponent, _monster_self], move_index)
 
 
-func _reenable_move_buttons() -> void:
+func _enable_move_buttons() -> void:
 	for button in _move_buttons:
 		button.disabled = false
+
+
+func _disable_move_buttons() -> void:
+	for button in _move_buttons:
+		button.disabled = true
 
 
 func _self_decrease_health(damage_amount: int) -> void:

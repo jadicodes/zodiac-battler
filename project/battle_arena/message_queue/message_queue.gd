@@ -1,6 +1,7 @@
 class_name MessageQueue
 extends Node
 
+signal queue_started
 signal queue_depleted
 signal message_started(message: Message)
 signal message_skipped
@@ -13,6 +14,7 @@ var _current_message: Message
 func add_message(message: Message) -> void:
 	_messages.append(message)
 	if _current_message == null:
+		queue_started.emit()
 		advance()
 
 

@@ -1,4 +1,5 @@
 KEYS,en_US
+AWAIT_CHOICE,Make your move!
 MOVE_USED,%s used %s on %s.
 MOVE_MISSED,%s's move missed.
 DAMAGE_TAKEN,%s took %d damage.
