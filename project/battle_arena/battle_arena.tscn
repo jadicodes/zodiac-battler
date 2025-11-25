@@ -88,18 +88,30 @@ offset_right = 180.0
 offset_bottom = 248.0
 texture = ExtResource("5_etk7j")
 
+<<<<<<< Updated upstream
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
 custom_minimum_size = Vector2(0, 104)
+=======
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = -1
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer"]
+>>>>>>> Stashed changes
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="Textbox" parent="VBoxContainer/HBoxContainer" instance=ExtResource("5_ewqu3")]
+[node name="Textbox" parent="VBoxContainer/MarginContainer/HBoxContainer" instance=ExtResource("5_ewqu3")]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="MoveButtons" parent="VBoxContainer/HBoxContainer" instance=ExtResource("8_4layi")]
+[node name="MoveButtons" parent="VBoxContainer/MarginContainer/HBoxContainer" instance=ExtResource("8_4layi")]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(250, 100)
 layout_mode = 2
 
 [node name="MessageQueue" type="Node" parent="."]
@@ -107,6 +119,6 @@ unique_name_in_owner = true
 script = ExtResource("8_akadq")
 metadata/_custom_type_script = "uid://dvtydvip1p0w1"
 
-[connection signal="message_ended" from="VBoxContainer/HBoxContainer/Textbox" to="MessageQueue" method="_on_message_ended"]
-[connection signal="message_skipped" from="MessageQueue" to="VBoxContainer/HBoxContainer/Textbox" method="skip_text"]
-[connection signal="message_started" from="MessageQueue" to="VBoxContainer/HBoxContainer/Textbox" method="show_text"]
+[connection signal="message_ended" from="VBoxContainer/MarginContainer/HBoxContainer/Textbox" to="MessageQueue" method="_on_message_ended"]
+[connection signal="message_skipped" from="MessageQueue" to="VBoxContainer/MarginContainer/HBoxContainer/Textbox" method="skip_text"]
+[connection signal="message_started" from="MessageQueue" to="VBoxContainer/MarginContainer/HBoxContainer/Textbox" method="show_text"]

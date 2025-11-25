@@ -1,15 +1,17 @@
-[gd_resource type="Resource" script_class="Breed" load_steps=5 format=3 uid="uid://c8u3hw5eqn458"]
+[gd_resource type="Resource" script_class="Breed" load_steps=7 format=3 uid="uid://c8u3hw5eqn458"]
 
 [ext_resource type="Script" uid="uid://d2wg76v3vg2yt" path="res://moves/move.gd" id="1_x2p3v"]
-[ext_resource type="Resource" uid="uid://cgmxq7kmfgntw" path="res://moves/blaze.tres" id="2_3rkmc"]
+[ext_resource type="Resource" uid="uid://cgmxq7kmfgntw" path="res://moves/fire/blaze.tres" id="2_5bxvs"]
 [ext_resource type="Script" uid="uid://demay78bjjpnr" path="res://monsters/breed/breed.gd" id="2_g0mny"]
-[ext_resource type="Resource" uid="uid://dmawuoyv4y71l" path="res://moves/tornado.tres" id="3_3rkmc"]
+[ext_resource type="Resource" uid="uid://du0tjpbdmqtbp" path="res://moves/fire/fireblast.tres" id="3_qfrlm"]
+[ext_resource type="Resource" uid="uid://dmawuoyv4y71l" path="res://moves/wind/tornado.tres" id="4_ouusw"]
+[ext_resource type="Resource" uid="uid://ceq2yex7p07jm" path="res://moves/fire/ignite.tres" id="5_ovmvd"]
 
 [resource]
 script = ExtResource("2_g0mny")
 _monster_name = "Embermane"
 _type = 2
-_moves = Array[ExtResource("1_x2p3v")]([ExtResource("2_3rkmc"), ExtResource("2_3rkmc"), ExtResource("3_3rkmc"), ExtResource("2_3rkmc")])
+_moves = Array[ExtResource("1_x2p3v")]([ExtResource("2_5bxvs"), ExtResource("3_qfrlm"), ExtResource("4_ouusw"), ExtResource("5_ovmvd")])
 _health_points = 80
 _speed = 40
 metadata/_custom_type_script = "uid://demay78bjjpnr"
