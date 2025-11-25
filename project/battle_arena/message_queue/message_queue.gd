@@ -12,6 +12,8 @@ var _current_message: Message
 
 func add_message(message: Message) -> void:
 	_messages.append(message)
+	if _current_message == null:
+		advance()
 
 
 func advance() -> void:
