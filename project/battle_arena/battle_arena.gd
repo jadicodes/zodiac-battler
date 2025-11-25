@@ -16,8 +16,10 @@ func _ready() -> void:
 	_monster_self.fainted.connect(_lose)
 	_monster_self.damage_taken.connect(_self_decrease_health)
 	_monster_opponent.damage_taken.connect(_opponent_decrease_health)
-	%SelfHealthBar.on_game_start(_monster_self.get_total_health_points())
-	%OpponentHealthBar.on_game_start(_monster_opponent.get_total_health_points())
+	
+	%OpponentPlayerInfo.set_player(_monster_opponent)
+	%SelfPlayerInfo.set_player(_monster_self)
+	
 	_message_queue.queue_started.connect(_disable_move_buttons)
 	_message_queue.queue_depleted.connect(_enable_move_buttons)
 
@@ -82,11 +84,11 @@ func _disable_move_buttons() -> void:
 
 
 func _self_decrease_health(damage_amount: int) -> void:
-	%SelfHealthBar.subtract_health(damage_amount)
+	%SelfPlayerInfo.subtract_health(damage_amount)
 
 
 func _opponent_decrease_health(damage_amount: int) -> void:
-	%OpponentHealthBar.subtract_health(damage_amount)
+	%OpponentPlayerInfo.subtract_health(damage_amount)
 
 
 func _add_move_used_message(target: Monster, move: Move, monster: Monster) -> void:

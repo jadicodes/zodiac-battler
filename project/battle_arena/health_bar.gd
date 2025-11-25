@@ -17,7 +17,7 @@ func subtract_health(amount: int) -> void:
 	_update_health_bar()
 
 
-func on_game_start(max_health: int):
+func set_max_health(max_health: int):
 	max_value = max_health
 	_current_health = max_health
 	_update_health_bar()
