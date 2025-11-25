@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bi4etr5s1v3kc"]
+[gd_scene load_steps=14 format=3 uid="uid://bi4etr5s1v3kc"]
 
 [ext_resource type="Script" uid="uid://lxbgsksdckqd" path="res://battle_arena/battle_arena.gd" id="1_r4nqg"]
 [ext_resource type="Resource" uid="uid://c8u3hw5eqn458" path="res://monsters/breed/embermane.tres" id="2_lj2wh"]
@@ -6,6 +6,7 @@
 [ext_resource type="Resource" uid="uid://bmt1iiqphqefe" path="res://monsters/breed/harius.tres" id="4_etk7j"]
 [ext_resource type="PackedScene" uid="uid://bny50y62exih" path="res://battle_arena/textbox/textbox.tscn" id="5_ewqu3"]
 [ext_resource type="PackedScene" uid="uid://pw78k5es24iv" path="res://battle_arena/player_info/PlayerInfo.tscn" id="7_uvb1j"]
+[ext_resource type="PackedScene" uid="uid://bhg6lanvbq8qd" path="res://battle_arena/move_buttons/move_buttons.tscn" id="8_4layi"]
 [ext_resource type="Script" uid="uid://dvtydvip1p0w1" path="res://battle_arena/message_queue/message_queue.gd" id="8_akadq"]
 
 [sub_resource type="Resource" id="Resource_lj2wh"]
@@ -75,33 +76,9 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="GridContainer" type="GridContainer" parent="VBoxContainer/HBoxContainer"]
-layout_mode = 2
-columns = 2
-
-[node name="Move1" type="Button" parent="VBoxContainer/HBoxContainer/GridContainer"]
+[node name="MoveButtons" parent="VBoxContainer/HBoxContainer" instance=ExtResource("8_4layi")]
 unique_name_in_owner = true
 layout_mode = 2
-size_flags_vertical = 0
-text = "Attack1"
-
-[node name="Move2" type="Button" parent="VBoxContainer/HBoxContainer/GridContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_vertical = 0
-text = "Attack2"
-
-[node name="Move3" type="Button" parent="VBoxContainer/HBoxContainer/GridContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_vertical = 0
-text = "Attack3"
-
-[node name="Move4" type="Button" parent="VBoxContainer/HBoxContainer/GridContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_vertical = 0
-text = "Attack4"
 
 [node name="MessageQueue" type="Node" parent="."]
 unique_name_in_owner = true
@@ -109,9 +86,5 @@ script = ExtResource("8_akadq")
 metadata/_custom_type_script = "uid://dvtydvip1p0w1"
 
 [connection signal="message_ended" from="VBoxContainer/HBoxContainer/Textbox" to="MessageQueue" method="_on_message_ended"]
-[connection signal="pressed" from="VBoxContainer/HBoxContainer/GridContainer/Move1" to="." method="_on_move_button_pressed" binds= [0]]
-[connection signal="pressed" from="VBoxContainer/HBoxContainer/GridContainer/Move2" to="." method="_on_move_button_pressed" binds= [1]]
-[connection signal="pressed" from="VBoxContainer/HBoxContainer/GridContainer/Move3" to="." method="_on_move_button_pressed" binds= [2]]
-[connection signal="pressed" from="VBoxContainer/HBoxContainer/GridContainer/Move4" to="." method="_on_move_button_pressed" binds= [3]]
 [connection signal="message_skipped" from="MessageQueue" to="VBoxContainer/HBoxContainer/Textbox" method="skip_text"]
 [connection signal="message_started" from="MessageQueue" to="VBoxContainer/HBoxContainer/Textbox" method="show_text"]

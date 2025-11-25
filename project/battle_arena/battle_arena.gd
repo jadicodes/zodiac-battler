@@ -6,22 +6,22 @@ extends Control
 var _game_active := true
 
 @onready var _message_queue: MessageQueue = %MessageQueue
-@onready var _move_buttons: Array[Button] = [%Move1, %Move2, %Move3, %Move4]
+@onready var _move_buttons: MoveButtons = %MoveButtons
 
 
 func _ready() -> void:
 	_monster_opponent.initialize()
 	_monster_self.initialize()
+	_monster_self.set_belongs_to_player()
 	_monster_opponent.fainted.connect(_win)
 	_monster_self.fainted.connect(_lose)
 	_monster_self.damage_taken.connect(_self_decrease_health)
 	_monster_opponent.damage_taken.connect(_opponent_decrease_health)
-	
 	%OpponentPlayerInfo.set_player(_monster_opponent)
 	%SelfPlayerInfo.set_player(_monster_self)
-	
-	_message_queue.queue_started.connect(_disable_move_buttons)
-	_message_queue.queue_depleted.connect(_enable_move_buttons)
+	_message_queue.queue_started.connect(_move_buttons.disable)
+	_message_queue.queue_depleted.connect(_move_buttons.enable)
+	_move_buttons.move_selected.connect(_on_move_selected)
 
 	for monster in [_monster_opponent, _monster_self]:
 		monster.move_used.connect(_add_move_used_message.bind(monster))
@@ -29,9 +29,7 @@ func _ready() -> void:
 		monster.damage_taken.connect(_add_damage_taken_message.bind(monster))
 		monster.fainted.connect(_add_fainted_message.bind(monster))
 
-	var moves := _monster_self.get_moves()
-	for i in len(_move_buttons):
-		_move_buttons[i].text = moves[i].get_move_name()
+	_move_buttons.set_moves(_monster_self.get_moves())
 
 	_message_queue.add_message(Message.new(tr("AWAIT_CHOICE")))
 
@@ -43,9 +41,6 @@ func _process(_delta: float) -> void:
 
 func _process_turn(monsters: Array[Monster], self_move_index: int) -> void:
 	var turn_order := Monster.order_by_speed(monsters)
-	
-	for button in _move_buttons:
-		button.disabled = true
 
 	for i in len(turn_order):
 		if not _game_active:
@@ -69,18 +64,8 @@ func _lose() -> void:
 	print("YOU LOSE :'(")
 
 
-func _on_move_button_pressed(move_index: int) -> void:
+func _on_move_selected(move_index: int) -> void:
 	_process_turn([_monster_opponent, _monster_self], move_index)
-
-
-func _enable_move_buttons() -> void:
-	for button in _move_buttons:
-		button.disabled = false
-
-
-func _disable_move_buttons() -> void:
-	for button in _move_buttons:
-		button.disabled = true
 
 
 func _self_decrease_health(damage_amount: int) -> void:
