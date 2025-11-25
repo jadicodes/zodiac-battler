@@ -39,6 +39,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 0
 
 [node name="Control" type="TextureRect" parent="VBoxContainer"]
 layout_mode = 2
@@ -88,7 +89,9 @@ offset_bottom = 248.0
 texture = ExtResource("5_etk7j")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 104)
 layout_mode = 2
+theme_override_constants/separation = 0
 
 [node name="Textbox" parent="VBoxContainer/HBoxContainer" instance=ExtResource("5_ewqu3")]
 unique_name_in_owner = true
