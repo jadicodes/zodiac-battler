@@ -1,9 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://bi4etr5s1v3kc"]
+[gd_scene load_steps=13 format=3 uid="uid://bi4etr5s1v3kc"]
 
 [ext_resource type="Script" uid="uid://lxbgsksdckqd" path="res://battle_arena/battle_arena.gd" id="1_r4nqg"]
 [ext_resource type="Resource" uid="uid://c8u3hw5eqn458" path="res://monsters/breed/embermane.tres" id="2_lj2wh"]
 [ext_resource type="Script" uid="uid://c6p10u1cg3yux" path="res://monsters/monster.gd" id="3_ewqu3"]
 [ext_resource type="Resource" uid="uid://bmt1iiqphqefe" path="res://monsters/breed/harius.tres" id="4_etk7j"]
+[ext_resource type="Texture2D" uid="uid://c5og4m5hglu7s" path="res://battle_arena/background.png" id="5_4layi"]
+[ext_resource type="Texture2D" uid="uid://c8dwb7jo0e1jy" path="res://icon.svg" id="5_etk7j"]
 [ext_resource type="PackedScene" uid="uid://bny50y62exih" path="res://battle_arena/textbox/textbox.tscn" id="5_ewqu3"]
 [ext_resource type="PackedScene" uid="uid://pw78k5es24iv" path="res://battle_arena/player_info/PlayerInfo.tscn" id="7_uvb1j"]
 [ext_resource type="PackedScene" uid="uid://bhg6lanvbq8qd" path="res://battle_arena/move_buttons/move_buttons.tscn" id="8_4layi"]
@@ -38,9 +40,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Control" type="Control" parent="VBoxContainer"]
+[node name="Control" type="TextureRect" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+texture = ExtResource("5_4layi")
 
 [node name="OpponentPlayerInfo" parent="VBoxContainer/Control" instance=ExtResource("7_uvb1j")]
 unique_name_in_owner = true
@@ -67,6 +70,22 @@ offset_bottom = 0.0
 grow_horizontal = 0
 grow_vertical = 0
 size_flags_horizontal = 0
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Control"]
+layout_mode = 0
+offset_left = 483.0
+offset_top = -18.0
+offset_right = 611.0
+offset_bottom = 110.0
+texture = ExtResource("5_etk7j")
+
+[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/Control"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 120.0
+offset_right = 180.0
+offset_bottom = 248.0
+texture = ExtResource("5_etk7j")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
