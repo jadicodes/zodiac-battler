@@ -1,10 +1,21 @@
 extends ProgressBar
 
 var _current_health: int
+var _tween_duration := 0.25
+var _tween: Tween
 
 
 func _update_health_bar() -> void:
-	value = _current_health
+	if _tween and _tween.is_running():
+		_tween.kill()
+
+	_tween = create_tween()
+	_tween.tween_property(
+		self,
+		"value",
+		_current_health,
+		_tween_duration
+	).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 
 
 func add_health(amount: int) -> void:

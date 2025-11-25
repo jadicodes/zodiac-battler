@@ -62,3 +62,4 @@ horizontal_alignment = 1
 [node name="HealthBar" parent="OpponentInfo/MarginContainer/Panel/VBoxContainer" instance=ExtResource("2_lem0m")]
 unique_name_in_owner = true
 layout_mode = 2
+value = 100.0
