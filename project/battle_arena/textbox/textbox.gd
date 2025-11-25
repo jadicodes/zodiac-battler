@@ -16,7 +16,7 @@ const CHARS_PER_SECOND := 30.0
 var _current_state := State.READY
 
 @onready var _label: RichTextLabel = %Label
-@onready var _tween: Tween = get_tree().create_tween()
+@onready var _tween: Tween
 
 
 func show_text(message: Message) -> void:
