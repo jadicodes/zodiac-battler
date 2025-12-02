@@ -1,24 +1,24 @@
 [gd_scene load_steps=13 format=3 uid="uid://bi4etr5s1v3kc"]
 
-[ext_resource type="Script" uid="uid://lxbgsksdckqd" path="res://battle_arena/battle_arena.gd" id="1_r4nqg"]
-[ext_resource type="Resource" uid="uid://c8u3hw5eqn458" path="res://monsters/breed/embermane.tres" id="2_lj2wh"]
-[ext_resource type="Script" uid="uid://c6p10u1cg3yux" path="res://monsters/monster.gd" id="3_ewqu3"]
-[ext_resource type="Resource" uid="uid://bmt1iiqphqefe" path="res://monsters/breed/harius.tres" id="4_etk7j"]
+[ext_resource type="Script" uid="uid://bo28sbe3iokts" path="res://battle_arena/message_queue/event_queue.gd" id="1_etk7j"]
+[ext_resource type="Script" uid="uid://lxbgsksdckqd" path="res://battle_arena/battle_arena.gd" id="1_uvb1j"]
+[ext_resource type="Resource" uid="uid://c8u3hw5eqn458" path="res://monsters/breed/embermane.tres" id="2_pqvf1"]
+[ext_resource type="Script" uid="uid://c6p10u1cg3yux" path="res://monsters/monster.gd" id="3_rbsue"]
+[ext_resource type="Resource" uid="uid://bmt1iiqphqefe" path="res://monsters/breed/harius.tres" id="4_umwm4"]
 [ext_resource type="Texture2D" uid="uid://c5og4m5hglu7s" path="res://battle_arena/background.png" id="5_4layi"]
 [ext_resource type="Texture2D" uid="uid://c8dwb7jo0e1jy" path="res://icon.svg" id="5_etk7j"]
 [ext_resource type="PackedScene" uid="uid://bny50y62exih" path="res://battle_arena/textbox/textbox.tscn" id="5_ewqu3"]
 [ext_resource type="PackedScene" uid="uid://pw78k5es24iv" path="res://battle_arena/player_info/player_info.tscn" id="7_uvb1j"]
 [ext_resource type="PackedScene" uid="uid://bhg6lanvbq8qd" path="res://battle_arena/move_buttons/move_buttons.tscn" id="8_4layi"]
-[ext_resource type="Script" uid="uid://dvtydvip1p0w1" path="res://battle_arena/message_queue/message_queue.gd" id="8_akadq"]
 
-[sub_resource type="Resource" id="Resource_lj2wh"]
-script = ExtResource("3_ewqu3")
-_breed = ExtResource("2_lj2wh")
+[sub_resource type="Resource" id="Resource_87q6l"]
+script = ExtResource("3_rbsue")
+_breed = ExtResource("2_pqvf1")
 metadata/_custom_type_script = "uid://c6p10u1cg3yux"
 
-[sub_resource type="Resource" id="Resource_ewqu3"]
-script = ExtResource("3_ewqu3")
-_breed = ExtResource("4_etk7j")
+[sub_resource type="Resource" id="Resource_soj77"]
+script = ExtResource("3_rbsue")
+_breed = ExtResource("4_umwm4")
 metadata/_custom_type_script = "uid://c6p10u1cg3yux"
 
 [node name="BattleArena" type="Control"]
@@ -28,9 +28,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_r4nqg")
-_monster_opponent = SubResource("Resource_lj2wh")
-_monster_self = SubResource("Resource_ewqu3")
+script = ExtResource("1_uvb1j")
+_monster_opponent = SubResource("Resource_87q6l")
+_monster_self = SubResource("Resource_soj77")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -98,11 +98,7 @@ size_flags_horizontal = 3
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="MessageQueue" type="Node" parent="."]
+[node name="EventQueue" type="Node" parent="."]
 unique_name_in_owner = true
-script = ExtResource("8_akadq")
-metadata/_custom_type_script = "uid://dvtydvip1p0w1"
-
-[connection signal="message_ended" from="VBoxContainer/HBoxContainer/Textbox" to="MessageQueue" method="_on_message_ended"]
-[connection signal="message_skipped" from="MessageQueue" to="VBoxContainer/HBoxContainer/Textbox" method="skip_text"]
-[connection signal="message_started" from="MessageQueue" to="VBoxContainer/HBoxContainer/Textbox" method="show_text"]
+script = ExtResource("1_etk7j")
+metadata/_custom_type_script = "uid://bo28sbe3iokts"

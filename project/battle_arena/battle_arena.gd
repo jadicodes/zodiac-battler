@@ -5,9 +5,9 @@ extends Control
 
 var _game_active := true
 
-@onready var _message_queue: MessageQueue = %MessageQueue
+@onready var _event_queue: EventQueue = %EventQueue
 @onready var _move_buttons: MoveButtons = %MoveButtons
-
+@onready var _textbox: Textbox = %Textbox
 
 func _ready() -> void:
 	_monster_opponent.initialize()
@@ -19,8 +19,9 @@ func _ready() -> void:
 	_monster_opponent.damage_taken.connect(_opponent_decrease_health)
 	%OpponentPlayerInfo.set_player(_monster_opponent)
 	%SelfPlayerInfo.set_player(_monster_self)
-	_message_queue.queue_started.connect(_move_buttons.disable)
-	_message_queue.queue_depleted.connect(_move_buttons.enable)
+	_event_queue.queue_started.connect(_move_buttons.disable)
+	_event_queue.queue_depleted.connect(_move_buttons.enable)
+	_event_queue.event_started.connect(_textbox.handle_event)
 	_move_buttons.move_selected.connect(_on_move_selected)
 
 	for monster in [_monster_opponent, _monster_self]:
@@ -31,12 +32,12 @@ func _ready() -> void:
 
 	_move_buttons.set_moves(_monster_self.get_moves())
 
-	_message_queue.add_message(Message.new(tr("AWAIT_CHOICE")))
+	_event_queue.add_event(MessageEvent.new(tr("AWAIT_CHOICE")))
 
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("advance_text"):
-		_message_queue.advance()
+		_textbox.reset()
 
 
 func _process_turn(monsters: Array[Monster], self_move_index: int) -> void:
@@ -51,7 +52,7 @@ func _process_turn(monsters: Array[Monster], self_move_index: int) -> void:
 		else:
 			turn_order[i].use_move(turn_order[1-i], randi_range(0,3))
 
-	_message_queue.add_message(Message.new(tr("AWAIT_CHOICE")))
+	_event_queue.add_event(MessageEvent.new(tr("AWAIT_CHOICE")))
 
 
 func _win() -> void:
@@ -77,20 +78,20 @@ func _opponent_decrease_health(damage_amount: int) -> void:
 
 
 func _add_move_used_message(target: Monster, move: Move, monster: Monster) -> void:
-	var message := Message.new(tr("MOVE_USED") % [monster.get_monster_name(), move.get_move_name(), target.get_monster_name()])
-	_message_queue.add_message(message)
+	var _message_event := MessageEvent.new(tr("MOVE_USED") % [monster.get_monster_name(), move.get_move_name(), target.get_monster_name()])
+	_event_queue.add_event(_message_event)
 
 
 func _add_move_missed_message(_target: Monster, _move: Move, monster: Monster) -> void:
-	var message := Message.new(tr("MOVE_MISSED") % [monster.get_monster_name()])
-	_message_queue.add_message(message)
+	var _message_event := MessageEvent.new(tr("MOVE_MISSED") % [monster.get_monster_name()])
+	_event_queue.add_event(_message_event)
 
 
 func _add_damage_taken_message(damage_amount: int, monster: Monster) -> void:
-	var message := Message.new(tr("DAMAGE_TAKEN") % [monster.get_monster_name(), damage_amount])
-	_message_queue.add_message(message)
+	var _message_event := MessageEvent.new(tr("DAMAGE_TAKEN") % [monster.get_monster_name(), damage_amount])
+	_event_queue.add_event(_message_event)
 
 
 func _add_fainted_message(monster: Monster) -> void:
-	var message := Message.new(tr("FAINTED") % monster.get_monster_name())
-	_message_queue.add_message(message)
+	var _message_event := MessageEvent.new(tr("FAINTED") % monster.get_monster_name())
+	_event_queue.add_mevent(_message_event)

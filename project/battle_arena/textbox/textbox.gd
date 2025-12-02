@@ -14,13 +14,24 @@ enum State {
 const CHARS_PER_SECOND := 30.0
 
 var _current_state := State.READY
+var _current_message: MessageEvent
 
 @onready var _label: RichTextLabel = %Label
 @onready var _tween: Tween
 
 
-func show_text(message: Message) -> void:
-	_label.text = message.text
+func handle_event(event: Event) -> void:
+	if event is MessageEvent:
+		_show_text(event)
+
+
+func _show_text(message: MessageEvent) -> void:
+	assert(not _current_message)
+	
+	_current_message = message
+	message.start()
+	_label.visible_ratio = 0.0
+	_label.text = message.get_message()
 	_create_tween()
 	_change_state(State.READING)
 
@@ -61,6 +72,9 @@ func _change_state(state: State) -> void:
 	match _current_state:
 		State.READY:
 			_label.visible_ratio = 0.0
+			if _current_message:
+				_current_message.complete.call_deferred()
+				_current_message = null
 		State.READING:
 			message_started.emit()
 			_tween.play()
