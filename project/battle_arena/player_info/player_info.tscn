@@ -10,21 +10,20 @@ bg_color = Color(0.12156863, 0.09019608, 0.13725491, 1)
 bg_color = Color(0.8862745, 0.8862745, 0.8862745, 1)
 
 [node name="PlayerInfo" type="Control"]
-custom_minimum_size = Vector2(0, 60)
+custom_minimum_size = Vector2(240, 64)
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = -400.0
-offset_bottom = -300.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 0
+offset_right = 240.0
+offset_bottom = 60.0
 script = ExtResource("1_ynlxm")
 
 [node name="OpponentInfo" type="Panel" parent="."]
-layout_mode = 0
-offset_right = 240.0
-offset_bottom = 60.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_k54w4")
 
 [node name="MarginContainer" type="MarginContainer" parent="OpponentInfo"]
@@ -39,27 +38,30 @@ theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 
-[node name="Panel" type="Panel" parent="OpponentInfo/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="OpponentInfo/MarginContainer"]
 layout_mode = 2
+
+[node name="Panel" type="Panel" parent="OpponentInfo/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_i44ap")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="OpponentInfo/MarginContainer/Panel"]
-layout_mode = 0
-offset_right = 230.0
-offset_bottom = 50.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="NameLabel" type="Label" parent="OpponentInfo/MarginContainer/Panel/VBoxContainer"]
+[node name="NameLabel" type="Label" parent="OpponentInfo/MarginContainer/VBoxContainer/Panel"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 24)
-layout_mode = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_colors/font_color = Color(0.12156863, 0.09019608, 0.13725491, 1)
 theme_override_font_sizes/font_size = 32
 text = "Opponent"
 horizontal_alignment = 1
 
-[node name="HealthBar" parent="OpponentInfo/MarginContainer/Panel/VBoxContainer" instance=ExtResource("2_lem0m")]
+[node name="HealthBar" parent="OpponentInfo/MarginContainer/VBoxContainer" instance=ExtResource("2_lem0m")]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 value = 100.0
