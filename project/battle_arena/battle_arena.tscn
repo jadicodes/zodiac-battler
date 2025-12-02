@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://bi4etr5s1v3kc"]
 
-[ext_resource type="Script" uid="uid://bo28sbe3iokts" path="res://battle_arena/message_queue/event_queue.gd" id="1_etk7j"]
+[ext_resource type="Script" uid="uid://bo28sbe3iokts" path="res://event_queue/event_queue.gd" id="1_etk7j"]
 [ext_resource type="Script" uid="uid://lxbgsksdckqd" path="res://battle_arena/battle_arena.gd" id="1_uvb1j"]
 [ext_resource type="Resource" uid="uid://c8u3hw5eqn458" path="res://monsters/breed/embermane.tres" id="2_pqvf1"]
 [ext_resource type="Script" uid="uid://c6p10u1cg3yux" path="res://monsters/monster.gd" id="3_rbsue"]

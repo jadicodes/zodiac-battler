@@ -22,16 +22,15 @@ var _current_message: MessageEvent
 
 func handle_event(event: Event) -> void:
 	if event is MessageEvent:
-		_show_text(event)
+		_current_message = event
+
+	if _current_state == State.READY:
+		_show_text()
 
 
-func _show_text(message: MessageEvent) -> void:
-	assert(not _current_message)
-	
-	_current_message = message
-	message.start()
-	_label.visible_ratio = 0.0
-	_label.text = message.get_message()
+func _show_text() -> void:
+	_current_message.start()
+	_label.text = _current_message.get_message()
 	_create_tween()
 	_change_state(State.READING)
 
@@ -73,12 +72,14 @@ func _change_state(state: State) -> void:
 		State.READY:
 			_label.visible_ratio = 0.0
 			if _current_message:
-				_current_message.complete.call_deferred()
-				_current_message = null
+				_show_text()
 		State.READING:
 			message_started.emit()
 			_tween.play()
 		State.FINISHED:
+			if _current_message:
+				_current_message.complete.call_deferred()
+				_current_message = null
 			message_ended.emit()
 			_label.visible_ratio = 1.0
 			_tween.pause()
