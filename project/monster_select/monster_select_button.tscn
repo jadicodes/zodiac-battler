@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dvkl7s1xn7hqc"]
+
+[ext_resource type="Script" uid="uid://bg566l6ixqkli" path="res://monster_select/monster_select_button.gd" id="1_bekr3"]
+
+[node name="MonsterSelectButton" type="TextureButton"]
+script = ExtResource("1_bekr3")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

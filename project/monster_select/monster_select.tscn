@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://dcq1jyvigtr0n"]
+
+[ext_resource type="Script" uid="uid://inyctean21v7" path="res://monster_select/monster_select.gd" id="1_enmru"]
+[ext_resource type="PackedScene" uid="uid://dvkl7s1xn7hqc" path="res://monster_select/monster_select_button.tscn" id="2_v8ndl"]
+[ext_resource type="Resource" uid="uid://bmt1iiqphqefe" path="res://monsters/breed/harius.tres" id="3_7ewmc"]
+[ext_resource type="Resource" uid="uid://c8u3hw5eqn458" path="res://monsters/breed/embermane.tres" id="4_a6qg2"]
+
+[node name="MonsterSelect" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_enmru")
+
+[node name="SelectYourMonsterLabel" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 209.0
+offset_top = 23.0
+offset_right = 305.0
+offset_bottom = 36.0
+text = "select ur monster!"
+
+[node name="MonsterSelectButton" parent="." instance=ExtResource("2_v8ndl")]
+layout_mode = 0
+offset_left = 138.0
+offset_top = 136.0
+offset_right = 138.0
+offset_bottom = 136.0
+_breed = ExtResource("3_7ewmc")
+
+[node name="MonsterSelectButton2" parent="." instance=ExtResource("2_v8ndl")]
+layout_mode = 0
+offset_left = 426.0
+offset_top = 145.0
+offset_right = 426.0
+offset_bottom = 145.0
+_breed = ExtResource("4_a6qg2")
+
+[connection signal="selected" from="MonsterSelectButton" to="." method="_select_monster"]
+[connection signal="selected" from="MonsterSelectButton2" to="." method="_select_monster"]
