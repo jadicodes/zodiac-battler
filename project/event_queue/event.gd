@@ -1,5 +1,5 @@
 class_name Event
-extends Node
+extends RefCounted
 
 signal started
 signal completed
