@@ -70,7 +70,6 @@ func _change_state(state: State) -> void:
 
 	match _current_state:
 		State.READY:
-			_label.visible_ratio = 0.0
 			if _current_message:
 				_show_text()
 		State.READING:

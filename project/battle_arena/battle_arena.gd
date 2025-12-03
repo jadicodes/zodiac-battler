@@ -48,6 +48,7 @@ func _process(_delta: float) -> void:
 
 
 func _process_turn(monsters: Array[Monster], self_move_index: int) -> void:
+	_textbox.reset()
 	var turn_order := Monster.order_by_speed(monsters)
 
 	for i in len(turn_order):
