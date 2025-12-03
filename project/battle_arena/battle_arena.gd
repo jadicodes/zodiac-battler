@@ -27,6 +27,8 @@ func _ready() -> void:
 	_event_queue.queue_started.connect(_move_buttons.disable)
 	_event_queue.queue_depleted.connect(_move_buttons.enable)
 	_event_queue.event_started.connect(_textbox.handle_event)
+	_event_queue.event_started.connect(%OpponentPlayerInfo.handle_event)
+	_event_queue.event_started.connect(%SelfPlayerInfo.handle_event)
 	_move_buttons.move_selected.connect(_on_move_selected)
 
 	for monster in [_monster_opponent, _monster_self]:
@@ -75,11 +77,11 @@ func _on_move_selected(move_index: int) -> void:
 
 
 func _self_decrease_health(damage_amount: int) -> void:
-	%SelfPlayerInfo.subtract_health(damage_amount)
+	_event_queue.add_event(HealthChangeEvent.new(_monster_self, damage_amount))
 
 
 func _opponent_decrease_health(damage_amount: int) -> void:
-	%OpponentPlayerInfo.subtract_health(damage_amount)
+	_event_queue.add_event(HealthChangeEvent.new(_monster_opponent, damage_amount))
 
 
 func _add_move_used_message(target: Monster, move: Move, monster: Monster) -> void:
