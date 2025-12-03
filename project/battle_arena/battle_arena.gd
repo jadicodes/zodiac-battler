@@ -102,4 +102,4 @@ func _add_damage_taken_message(damage_amount: int, monster: Monster) -> void:
 
 func _add_fainted_message(monster: Monster) -> void:
 	var _message_event := MessageEvent.new(tr("FAINTED") % monster.get_monster_name())
-	_event_queue.add_mevent(_message_event)
+	_event_queue.add_event(_message_event)
