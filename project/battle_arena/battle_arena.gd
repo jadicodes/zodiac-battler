@@ -9,6 +9,7 @@ var _game_active := true
 @onready var _move_buttons: MoveButtons = %MoveButtons
 @onready var _textbox: Textbox = %Textbox
 
+
 func _ready() -> void:
 	_monster_opponent.initialize()
 	_monster_self.initialize()
@@ -19,6 +20,10 @@ func _ready() -> void:
 	_monster_opponent.damage_taken.connect(_opponent_decrease_health)
 	%OpponentPlayerInfo.set_player(_monster_opponent)
 	%SelfPlayerInfo.set_player(_monster_self)
+	
+	%OpponentTexture.texture = _monster_opponent.get_texture()
+	%SelfTexture.texture = _monster_self.get_texture()
+	
 	_event_queue.queue_started.connect(_move_buttons.disable)
 	_event_queue.queue_depleted.connect(_move_buttons.enable)
 	_event_queue.event_started.connect(_textbox.handle_event)

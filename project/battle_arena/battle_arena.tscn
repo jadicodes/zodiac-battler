@@ -13,12 +13,12 @@
 
 [sub_resource type="Resource" id="Resource_87q6l"]
 script = ExtResource("3_rbsue")
-_breed = ExtResource("2_pqvf1")
+_breed = ExtResource("4_umwm4")
 metadata/_custom_type_script = "uid://c6p10u1cg3yux"
 
 [sub_resource type="Resource" id="Resource_soj77"]
 script = ExtResource("3_rbsue")
-_breed = ExtResource("4_umwm4")
+_breed = ExtResource("2_pqvf1")
 metadata/_custom_type_script = "uid://c6p10u1cg3yux"
 
 [node name="BattleArena" type="Control"]
@@ -68,7 +68,8 @@ grow_horizontal = 0
 grow_vertical = 0
 size_flags_horizontal = 0
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Control"]
+[node name="OpponentTexture" type="TextureRect" parent="VBoxContainer/Control"]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = 483.0
 offset_top = -18.0
@@ -76,7 +77,8 @@ offset_right = 611.0
 offset_bottom = 110.0
 texture = ExtResource("5_etk7j")
 
-[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/Control"]
+[node name="SelfTexture" type="TextureRect" parent="VBoxContainer/Control"]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = 52.0
 offset_top = 120.0

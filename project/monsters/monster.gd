@@ -42,6 +42,13 @@ func take_damage(damage_amount: int) -> void:
 		fainted.emit()
 
 
+func get_texture() -> Texture2D:
+	if _belongs_to_player:
+		return _breed.get_normal_texture_back()
+	else:
+		return _breed.get_normal_texture_front()
+
+
 func get_monster_name() -> String:
 	return _breed.get_monster_name()
 
