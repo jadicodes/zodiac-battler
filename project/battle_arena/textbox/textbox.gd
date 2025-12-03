@@ -11,7 +11,7 @@ enum State {
 	FINISHED,
 }
 
-const CHARS_PER_SECOND := 30.0
+const CHARS_PER_SECOND := 50.0
 
 var _current_state := State.READY
 var _current_message: MessageEvent
