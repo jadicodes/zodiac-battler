@@ -18,5 +18,4 @@ func _set_monster_texture() -> void:
 
 
 func _on_pressed() -> void:
-	print("PRESSED")
 	selected.emit(_breed)

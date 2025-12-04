@@ -1,10 +1,10 @@
 extends Control
 
-@export var _monster_opponent: Monster
-@export var _monster_self: Monster
 
 var _game_active := true
 
+@onready var _monster_opponent := Monster.new(MonsterSelections.opponent_breed)
+@onready var _monster_self := Monster.new(MonsterSelections.self_breed)
 @onready var _event_queue: EventQueue = %EventQueue
 @onready var _move_buttons: MoveButtons = %MoveButtons
 @onready var _textbox: Textbox = %Textbox

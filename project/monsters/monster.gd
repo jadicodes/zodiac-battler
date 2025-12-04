@@ -12,6 +12,11 @@ var _remaining_health_points: int
 var _belongs_to_player: bool = false
 
 
+func _init(breed: Breed = null) -> void:
+	if breed:
+		_breed = breed
+
+
 func initialize() -> void:
 	_remaining_health_points = _breed.get_health_points()
 

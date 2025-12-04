@@ -18,6 +18,8 @@ var _monster_select_state:
 		if state == State.CHOOSE_OPPONENT:
 			%SelectYourMonsterLabel.text = "SELECT YOUR OPPONENT!"
 		if state == State.PLAY:
+			MonsterSelections.self_breed = _self_monster
+			MonsterSelections.opponent_breed = _opponent_monster
 			get_tree().change_scene_to_file("res://battle_arena/battle_arena.tscn")
 		_monster_select_state = state
 
@@ -31,11 +33,9 @@ func _set_state(state: int) -> void:
 
 
 func _select_monster(breed: Breed) -> void:
-	print("Monster select")
 	if _monster_select_state == State.CHOOSE_SELF:
 		_self_monster = breed
 		_set_state(State.CHOOSE_OPPONENT)
-		print(_self_monster)
 	elif _monster_select_state == State.CHOOSE_OPPONENT:
 		_opponent_monster = breed
 		_set_state(State.PLAY)
