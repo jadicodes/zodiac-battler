@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Move" load_steps=2 format=3 uid="uid://dg2yxkslca4qb"]
+
+[ext_resource type="Script" uid="uid://d2wg76v3vg2yt" path="res://moves/move.gd" id="1_oc13a"]
+
+[resource]
+script = ExtResource("1_oc13a")
+_move_name = "Scorch"
+_type = 2
+_attack_power = 50
+_attempts = 1
+_accuracy = 95
+metadata/_custom_type_script = "uid://d2wg76v3vg2yt"

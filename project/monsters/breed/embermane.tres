@@ -1,17 +1,19 @@
-[gd_resource type="Resource" script_class="Breed" load_steps=7 format=3 uid="uid://c8u3hw5eqn458"]
+[gd_resource type="Resource" script_class="Breed" load_steps=9 format=3 uid="uid://c8u3hw5eqn458"]
 
 [ext_resource type="Script" uid="uid://d2wg76v3vg2yt" path="res://moves/move.gd" id="1_x2p3v"]
-[ext_resource type="Resource" uid="uid://cgmxq7kmfgntw" path="res://moves/blaze.tres" id="2_3rkmc"]
 [ext_resource type="Script" uid="uid://demay78bjjpnr" path="res://monsters/breed/breed.gd" id="2_g0mny"]
-[ext_resource type="Resource" uid="uid://dmawuoyv4y71l" path="res://moves/tornado.tres" id="3_3rkmc"]
+[ext_resource type="Resource" uid="uid://cgmxq7kmfgntw" path="res://moves/fire/blaze.tres" id="2_ouusw"]
+[ext_resource type="Resource" uid="uid://dcilxvvdgolyh" path="res://moves/fire/fireball.tres" id="3_ovmvd"]
+[ext_resource type="Resource" uid="uid://dmawuoyv4y71l" path="res://moves/wind/tornado.tres" id="4_2xuoo"]
 [ext_resource type="Texture2D" uid="uid://tlvb0q0k32vt" path="res://monsters/breed/embermane_normal_back.png" id="4_5bxvs"]
+[ext_resource type="Resource" uid="uid://dg2yxkslca4qb" path="res://moves/fire/scorch.tres" id="5_2tqjl"]
 [ext_resource type="Texture2D" uid="uid://dqf37un58fnh7" path="res://monsters/breed/embermane_normal_front.png" id="5_qfrlm"]
 
 [resource]
 script = ExtResource("2_g0mny")
 _monster_name = "Embermane"
 _type = 2
-_moves = Array[ExtResource("1_x2p3v")]([ExtResource("2_3rkmc"), ExtResource("2_3rkmc"), ExtResource("3_3rkmc"), ExtResource("2_3rkmc")])
+_moves = Array[ExtResource("1_x2p3v")]([ExtResource("2_ouusw"), ExtResource("3_ovmvd"), ExtResource("4_2xuoo"), ExtResource("5_2tqjl")])
 _health_points = 80
 _speed = 40
 _normal_texture_front = ExtResource("5_qfrlm")
