@@ -32,8 +32,7 @@ func _ready() -> void:
 	_move_buttons.move_selected.connect(_on_move_selected)
 
 	for monster in [_monster_opponent, _monster_self]:
-		monster.move_used.connect(_add_move_used_message.bind(monster))
-		monster.move_missed.connect(_add_move_missed_message.bind(monster))
+		monster.move_used.connect(_on_move_used.bind(monster))
 		monster.fainted.connect(_add_fainted_message.bind(monster))
 
 	_move_buttons.set_moves(_monster_self.get_moves())
@@ -84,14 +83,17 @@ func _opponent_decrease_health(damage_amount: int) -> void:
 	_event_queue.add_event(HealthChangeEvent.new(_monster_opponent, damage_amount))
 
 
-func _add_move_used_message(target: Monster, move: Move, monster: Monster) -> void:
-	var _message_event := MessageEvent.new(tr("MOVE_USED") % [monster.get_monster_name(), move.get_move_name(), target.get_monster_name()])
+func _on_move_used(target: Monster, move: Move, is_successful: bool, monster: Monster) -> void:
+	var _message_event: MessageEvent
+	_message_event = MessageEvent.new(tr("MOVE_USED") % [monster.get_monster_name(), move.get_move_name(), target.get_monster_name()])
 	_event_queue.add_event(_message_event)
 
-
-func _add_move_missed_message(_target: Monster, _move: Move, monster: Monster) -> void:
-	var _message_event := MessageEvent.new(tr("MOVE_MISSED") % [monster.get_monster_name()])
-	_event_queue.add_event(_message_event)
+	if is_successful:
+		@warning_ignore("integer_division")
+		target.take_damage(move.get_attack_power()/10)
+	else:
+		_message_event = MessageEvent.new(tr("MOVE_MISSED") % [monster.get_monster_name()])
+		_event_queue.add_event(_message_event)
 
 
 func _add_fainted_message(monster: Monster) -> void:
