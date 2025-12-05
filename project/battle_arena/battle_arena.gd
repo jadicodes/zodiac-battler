@@ -20,11 +20,11 @@ func _ready() -> void:
 	_monster_self.fainted.connect(_lose)
 	_monster_self.damage_taken.connect(_self_decrease_health)
 	_monster_opponent.damage_taken.connect(_opponent_decrease_health)
+	
 	%OpponentPlayerInfo.set_player(_monster_opponent)
 	%SelfPlayerInfo.set_player(_monster_self)
-	
-	%OpponentTexture.texture = _monster_opponent.get_texture()
-	%SelfTexture.texture = _monster_self.get_texture()
+	%OpponentTexture.set_player(_monster_opponent)
+	%SelfTexture.set_player(_monster_self)
 	
 	_event_queue.queue_started.connect(_move_buttons.disable)
 	_event_queue.queue_depleted.connect(_move_buttons.enable)
@@ -32,6 +32,8 @@ func _ready() -> void:
 	_event_queue.event_started.connect(_move_animator.handle_event)
 	_event_queue.event_started.connect(%OpponentPlayerInfo.handle_event)
 	_event_queue.event_started.connect(%SelfPlayerInfo.handle_event)
+	_event_queue.event_started.connect(%OpponentTexture.handle_event)
+	_event_queue.event_started.connect(%SelfTexture.handle_event)
 	_move_buttons.move_selected.connect(_on_move_selected)
 
 	for monster in [_monster_opponent, _monster_self]:

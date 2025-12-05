@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://bi4etr5s1v3kc"]
+[gd_scene load_steps=10 format=3 uid="uid://bi4etr5s1v3kc"]
 
 [ext_resource type="Script" uid="uid://bo28sbe3iokts" path="res://event_queue/event_queue.gd" id="1_etk7j"]
 [ext_resource type="Script" uid="uid://lxbgsksdckqd" path="res://battle_arena/battle_arena.gd" id="1_uvb1j"]
 [ext_resource type="Texture2D" uid="uid://c5og4m5hglu7s" path="res://battle_arena/background.png" id="5_4layi"]
 [ext_resource type="Texture2D" uid="uid://c8dwb7jo0e1jy" path="res://icon.svg" id="5_etk7j"]
 [ext_resource type="PackedScene" uid="uid://bny50y62exih" path="res://battle_arena/textbox/textbox.tscn" id="5_ewqu3"]
+[ext_resource type="Script" uid="uid://bp6n0fxfquenm" path="res://battle_arena/monster_texture_rect.gd" id="5_pqvf1"]
 [ext_resource type="PackedScene" uid="uid://pw78k5es24iv" path="res://battle_arena/player_info/player_info.tscn" id="7_uvb1j"]
 [ext_resource type="PackedScene" uid="uid://bhg6lanvbq8qd" path="res://battle_arena/move_buttons/move_buttons.tscn" id="8_4layi"]
 [ext_resource type="PackedScene" uid="uid://eal3t0pucmf5" path="res://battle_arena/move_animator.tscn" id="8_akadq"]
@@ -62,6 +63,8 @@ offset_top = -18.0
 offset_right = 611.0
 offset_bottom = 110.0
 texture = ExtResource("5_etk7j")
+script = ExtResource("5_pqvf1")
+metadata/_custom_type_script = "uid://bp6n0fxfquenm"
 
 [node name="SelfTexture" type="TextureRect" parent="VBoxContainer/Control"]
 unique_name_in_owner = true
@@ -71,6 +74,8 @@ offset_top = 120.0
 offset_right = 180.0
 offset_bottom = 248.0
 texture = ExtResource("5_etk7j")
+script = ExtResource("5_pqvf1")
+metadata/_custom_type_script = "uid://bp6n0fxfquenm"
 
 [node name="AttackSelfMarker" type="Marker2D" parent="VBoxContainer/Control"]
 position = Vector2(227, 175)

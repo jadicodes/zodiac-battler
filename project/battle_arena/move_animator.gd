@@ -33,6 +33,7 @@ func _handle_move_event(event: MoveEvent) -> void:
 	_play_animation()
 
 
+
 func _play_animation() -> void:
 	var start := _attack_self_marker.position
 	var end := _attack_opponent_marker.position
