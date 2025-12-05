@@ -42,8 +42,6 @@ func _play_animation() -> void:
 		start = _attack_opponent_marker.position
 		end = _attack_self_marker.position
 
-	_sprite.modulate = Color.hex(0xb22741ff) if _current_event.get_move().get_type() == Types.Type.FIRE else Color.hex(0xbcb0b3ff)
-	
 	_sprite.position = start
 	_sprite.show()
 	var tween := get_tree().create_tween()

@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Move" load_steps=3 format=3 uid="uid://dg2yxkslca4qb"]
 
-[ext_resource type="Texture2D" uid="uid://betteji863qrw" path="res://moves/ball.png" id="1_b7xay"]
+[ext_resource type="Texture2D" uid="uid://d3224tf67hecp" path="res://moves/fireball.png" id="1_b7xay"]
 [ext_resource type="Script" uid="uid://d2wg76v3vg2yt" path="res://moves/move.gd" id="1_oc13a"]
 
 [resource]
