@@ -29,6 +29,9 @@ func handle_event(event: Event) -> void:
 
 
 func _show_text() -> void:
+	if not _current_message:
+		return
+
 	_current_message.start()
 	_label.text = _current_message.get_message()
 	_create_tween()

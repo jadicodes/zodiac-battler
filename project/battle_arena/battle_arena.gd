@@ -6,6 +6,7 @@ var _game_active := true
 @onready var _monster_opponent := Monster.new(MonsterSelections.opponent_breed)
 @onready var _monster_self := Monster.new(MonsterSelections.self_breed)
 @onready var _event_queue: EventQueue = %EventQueue
+@onready var _move_animator: MoveAnimator = %MoveAnimator
 @onready var _move_buttons: MoveButtons = %MoveButtons
 @onready var _textbox: Textbox = %Textbox
 
@@ -14,6 +15,7 @@ func _ready() -> void:
 	_monster_opponent.initialize()
 	_monster_self.initialize()
 	_monster_self.set_belongs_to_player()
+	_move_animator.set_monsters(_monster_self, _monster_opponent)
 	_monster_opponent.fainted.connect(_win)
 	_monster_self.fainted.connect(_lose)
 	_monster_self.damage_taken.connect(_self_decrease_health)
@@ -27,6 +29,7 @@ func _ready() -> void:
 	_event_queue.queue_started.connect(_move_buttons.disable)
 	_event_queue.queue_depleted.connect(_move_buttons.enable)
 	_event_queue.event_started.connect(_textbox.handle_event)
+	_event_queue.event_started.connect(_move_animator.handle_event)
 	_event_queue.event_started.connect(%OpponentPlayerInfo.handle_event)
 	_event_queue.event_started.connect(%SelfPlayerInfo.handle_event)
 	_move_buttons.move_selected.connect(_on_move_selected)
@@ -89,6 +92,7 @@ func _on_move_used(target: Monster, move: Move, is_successful: bool, monster: Mo
 	_event_queue.add_event(_message_event)
 
 	if is_successful:
+		_event_queue.add_event(MoveEvent.new(monster, move))
 		@warning_ignore("integer_division")
 		target.take_damage(move.get_attack_power()/10)
 	else:

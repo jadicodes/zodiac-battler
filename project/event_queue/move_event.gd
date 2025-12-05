@@ -14,5 +14,5 @@ func get_monster() -> Monster:
 	return _monster
 
 
-func get_amount() -> Move:
+func get_move() -> Move:
 	return _move
