@@ -29,7 +29,7 @@ func _handle_move_event(event: MoveEvent) -> void:
 
 	_current_event = event
 	_sprite.texture = event.get_move().get_move_texture()
-	_current_event.start()
+	_current_event.start(self)
 	_play_animation()
 
 
@@ -59,4 +59,4 @@ func _play_animation() -> void:
 func _on_animation_complete() -> void:
 	_sprite.hide()
 	if _current_event:
-		_current_event.complete.call_deferred()
+		_current_event.complete(self)

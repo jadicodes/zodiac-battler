@@ -18,9 +18,9 @@ func _handle_health_change_event(event: HealthChangeEvent) -> void:
 	if event.get_monster() != _monster:
 		return
 
-	event.start()
+	event.start(self)
 	subtract_health(event.get_amount())
-	event.complete.call_deferred()
+	event.complete.call_deferred(self)
 
 
 func subtract_health(amount) -> void:

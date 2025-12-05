@@ -32,7 +32,7 @@ func _show_text() -> void:
 	if not _current_message:
 		return
 
-	_current_message.start()
+	_current_message.start(self)
 	_label.text = _current_message.get_message()
 	_create_tween()
 	_change_state(State.READING)
@@ -80,7 +80,7 @@ func _change_state(state: State) -> void:
 			_tween.play()
 		State.FINISHED:
 			if _current_message:
-				_current_message.complete.call_deferred()
+				_current_message.complete.call_deferred(self)
 				_current_message = null
 			message_ended.emit()
 			_label.visible_ratio = 1.0

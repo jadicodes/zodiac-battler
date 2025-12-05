@@ -4,10 +4,20 @@ extends RefCounted
 signal started
 signal completed
 
-
-func start() -> void:
-	started.emit()
+var _listeners: Array[Object] = []
 
 
-func complete() -> void:
-	completed.emit()
+func start(listener: Object) -> void:
+	_listeners.append(listener)
+
+	if _listeners.size() == 1:
+		started.emit()
+
+
+func complete(listener: Object) -> void:
+	assert(listener in _listeners)
+	
+	_listeners.erase(listener)
+	
+	if _listeners.is_empty():
+		completed.emit()
