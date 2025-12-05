@@ -6,6 +6,7 @@ extends Resource
 @export var _attack_power: int
 @export var _attempts: int
 @export var _accuracy: int
+@export var _move_texture: Texture2D
 
 
 func get_move_name() -> String:
@@ -26,3 +27,7 @@ func get_attempts() -> int:
 
 func get_accuracy() -> int:
 	return _accuracy
+
+
+func get_move_texture() -> Texture2D:
+	return _move_texture

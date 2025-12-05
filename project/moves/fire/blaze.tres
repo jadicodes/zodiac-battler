@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="Move" load_steps=2 format=3 uid="uid://cgmxq7kmfgntw"]
+[gd_resource type="Resource" script_class="Move" load_steps=3 format=3 uid="uid://cgmxq7kmfgntw"]
 
+[ext_resource type="Texture2D" uid="uid://betteji863qrw" path="res://moves/ball.png" id="1_7s2mr"]
 [ext_resource type="Script" uid="uid://d2wg76v3vg2yt" path="res://moves/move.gd" id="1_leshy"]
 
 [resource]
@@ -9,4 +10,5 @@ _type = 2
 _attack_power = 90
 _attempts = 1
 _accuracy = 40
+_move_texture = ExtResource("1_7s2mr")
 metadata/_custom_type_script = "uid://d2wg76v3vg2yt"

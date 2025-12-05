@@ -28,8 +28,10 @@ func _handle_move_event(event: MoveEvent) -> void:
 		return
 
 	_current_event = event
+	_sprite.texture = event.get_move().get_move_texture()
 	_current_event.start()
 	_play_animation()
+
 
 func _play_animation() -> void:
 	var start := _attack_self_marker.position
