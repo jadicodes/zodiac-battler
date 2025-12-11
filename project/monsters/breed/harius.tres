@@ -12,7 +12,7 @@
 [resource]
 script = ExtResource("1_leps3")
 _monster_name = "Harius"
-_type = 1
+_type = 3
 _moves = Array[ExtResource("1_38s86")]([ExtResource("2_n0xyt"), ExtResource("3_qkgky"), ExtResource("4_dvkfb"), ExtResource("5_yks30")])
 _health_points = 40
 _speed = 80
