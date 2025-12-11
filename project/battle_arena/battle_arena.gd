@@ -1,5 +1,9 @@
 extends Control
 
+const DAMAGE_DIVIDER: float = 10
+const DEFAULT_MULTIPLER: float = 1.0
+const SUPER_EFFECTIVE_MULTIPLIER: float = 1.5
+const NOT_EFFECTIVE_MULTIPLIER: float = 0.5
 
 var _game_active := true
 
@@ -89,7 +93,7 @@ func _opponent_decrease_health(damage_amount: int) -> void:
 
 
 func _on_move_used(target: Monster, move: Move, is_successful: bool, monster: Monster) -> void:
-	var _effectiveness_multiplier : float = 1
+	var _effectiveness_multiplier : float = DEFAULT_MULTIPLER
 	var _effectiveness_message_event: MessageEvent
 	var _message_event: MessageEvent
 	_message_event = MessageEvent.new(tr("MOVE_USED") % [monster.get_monster_name(), move.get_move_name(), target.get_monster_name()])
@@ -101,15 +105,15 @@ func _on_move_used(target: Monster, move: Move, is_successful: bool, monster: Mo
 		
 		# Type Effectiveness
 		if Types.is_super_effective(move.get_type(), target.get_type()):
-			_effectiveness_multiplier = 1.5
+			_effectiveness_multiplier = SUPER_EFFECTIVE_MULTIPLIER
 			_effectiveness_message_event = MessageEvent.new(tr("SUPER_EFFECTIVE"))
 
 		if Types.is_not_effective(move.get_type(), target.get_type()):
-			_effectiveness_multiplier = 0.5
+			_effectiveness_multiplier = NOT_EFFECTIVE_MULTIPLIER
 			_effectiveness_message_event = MessageEvent.new(tr("NOT_EFFECTIVE"))
 
 		@warning_ignore("narrowing_conversion", "integer_division")
-		target.take_damage((move.get_attack_power()/10)*_effectiveness_multiplier)
+		target.take_damage((move.get_attack_power()/DAMAGE_DIVIDER)*_effectiveness_multiplier)
 		if _effectiveness_message_event:
 			_event_queue.add_event(_effectiveness_message_event)
 
