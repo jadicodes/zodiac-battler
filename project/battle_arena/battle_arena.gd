@@ -4,6 +4,7 @@ const DAMAGE_DIVIDER: float = 10
 const DEFAULT_MULTIPLER: float = 1.0
 const SUPER_EFFECTIVE_MULTIPLIER: float = 1.5
 const NOT_EFFECTIVE_MULTIPLIER: float = 0.5
+const STAB_MULTIPLIER: float = 1.5
 
 var _game_active := true
 
@@ -94,6 +95,7 @@ func _opponent_decrease_health(damage_amount: int) -> void:
 
 func _on_move_used(target: Monster, move: Move, is_successful: bool, monster: Monster) -> void:
 	var _effectiveness_multiplier : float = DEFAULT_MULTIPLER
+	var _stab_multiplier : float = DEFAULT_MULTIPLER
 	var _effectiveness_message_event: MessageEvent
 	var _message_event: MessageEvent
 	_message_event = MessageEvent.new(tr("MOVE_USED") % [monster.get_monster_name(), move.get_move_name(), target.get_monster_name()])
@@ -102,7 +104,7 @@ func _on_move_used(target: Monster, move: Move, is_successful: bool, monster: Mo
 	if is_successful:
 		_event_queue.add_event(MoveEvent.new(monster, move))
 		@warning_ignore("integer_division")
-		
+
 		# Type Effectiveness
 		if Types.is_super_effective(move.get_type(), target.get_type()):
 			_effectiveness_multiplier = SUPER_EFFECTIVE_MULTIPLIER
@@ -112,8 +114,11 @@ func _on_move_used(target: Monster, move: Move, is_successful: bool, monster: Mo
 			_effectiveness_multiplier = NOT_EFFECTIVE_MULTIPLIER
 			_effectiveness_message_event = MessageEvent.new(tr("NOT_EFFECTIVE"))
 
+		if monster.get_type() == move.get_type():
+			_stab_multiplier = STAB_MULTIPLIER
+
 		@warning_ignore("narrowing_conversion", "integer_division")
-		target.take_damage((move.get_attack_power()/DAMAGE_DIVIDER)*_effectiveness_multiplier)
+		target.take_damage((move.get_attack_power()/DAMAGE_DIVIDER)*_effectiveness_multiplier*_stab_multiplier)
 		if _effectiveness_message_event:
 			_event_queue.add_event(_effectiveness_message_event)
 
