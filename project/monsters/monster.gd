@@ -1,8 +1,7 @@
 class_name Monster
 extends Resource
 
-signal move_used(target: Monster, move: Move, is_successful: bool)
-signal move_missed(target: Monster, move: Move)
+signal move_used(target: Monster, move: Move, is_successful: bool, is_crit: bool)
 signal damage_taken(damage_amount: int)
 signal fainted
 
@@ -25,10 +24,10 @@ func use_move(target: Monster, move_index: int) -> void:
 	var move = get_moves()[move_index]
 	print(get_monster_name() + " using move " + move._move_name)
 	var accuracy: int = move.get_accuracy()
-	var random_number = randi_range(0, 100)
-	var is_successful: bool = random_number < accuracy
+	var is_successful: bool = randi_range(0, 100) < accuracy
+	var is_crit: bool = randi_range(0, 100) < Move.CRIT_CHANCE
 
-	move_used.emit(target, move, is_successful)
+	move_used.emit(target, move, is_successful, is_crit)
 
 
 func take_damage(damage_amount: int) -> void:

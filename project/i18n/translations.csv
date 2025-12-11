@@ -6,3 +6,4 @@ DAMAGE_TAKEN,%s took %d damage.
 FAINTED,%s has fainted.
 SUPER_EFFECTIVE,It was super effective!
 NOT_EFFECTIVE,It was not very effective...
+CRITICAL_HIT,Critical hit!
