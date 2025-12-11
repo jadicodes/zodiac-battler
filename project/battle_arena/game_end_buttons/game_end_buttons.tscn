@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=3 uid="uid://cpwhykbtk07y"]
+
+[ext_resource type="Script" uid="uid://dh0a25dtcc1yj" path="res://battle_arena/game_end_buttons/game_end_buttons.gd" id="1_1f4o7"]
+[ext_resource type="FontFile" uid="uid://gptd25r7q4jy" path="res://nb_pixel_font_bundle/Habbo.ttf" id="2_24l4g"]
+
+[node name="GameEndButtons" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_1f4o7")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+
+[node name="RematchButton" type="Button" parent="GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_24l4g")
+theme_override_font_sizes/font_size = 32
+text = "Rematch"
+
+[node name="NewGameButton" type="Button" parent="GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_24l4g")
+theme_override_font_sizes/font_size = 32
+text = "New Game"

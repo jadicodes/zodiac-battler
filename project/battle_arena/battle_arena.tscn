@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bi4etr5s1v3kc"]
+[gd_scene load_steps=11 format=3 uid="uid://bi4etr5s1v3kc"]
 
 [ext_resource type="Script" uid="uid://bo28sbe3iokts" path="res://event_queue/event_queue.gd" id="1_etk7j"]
 [ext_resource type="Script" uid="uid://lxbgsksdckqd" path="res://battle_arena/battle_arena.gd" id="1_uvb1j"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://pw78k5es24iv" path="res://battle_arena/player_info/player_info.tscn" id="7_uvb1j"]
 [ext_resource type="PackedScene" uid="uid://bhg6lanvbq8qd" path="res://battle_arena/move_buttons/move_buttons.tscn" id="8_4layi"]
 [ext_resource type="PackedScene" uid="uid://eal3t0pucmf5" path="res://battle_arena/move_animator.tscn" id="8_akadq"]
+[ext_resource type="PackedScene" uid="uid://cpwhykbtk07y" path="res://battle_arena/game_end_buttons/game_end_buttons.tscn" id="8_pqvf1"]
 
 [node name="BattleArena" type="Control"]
 layout_mode = 3
@@ -95,6 +96,12 @@ size_flags_horizontal = 3
 
 [node name="MoveButtons" parent="VBoxContainer/HBoxContainer" instance=ExtResource("8_4layi")]
 unique_name_in_owner = true
+layout_mode = 2
+
+[node name="GameEndButtons" parent="VBoxContainer/HBoxContainer" instance=ExtResource("8_pqvf1")]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(200, 100)
 layout_mode = 2
 
 [node name="EventQueue" type="Node" parent="."]

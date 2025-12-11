@@ -13,6 +13,7 @@ var _game_active := true
 @onready var _event_queue: EventQueue = %EventQueue
 @onready var _move_animator: MoveAnimator = %MoveAnimator
 @onready var _move_buttons: MoveButtons = %MoveButtons
+@onready var _game_end_buttons: GameEndButtons = %GameEndButtons
 @onready var _textbox: Textbox = %Textbox
 
 
@@ -21,8 +22,6 @@ func _ready() -> void:
 	_monster_self.initialize()
 	_monster_self.set_belongs_to_player()
 	_move_animator.set_monsters(_monster_self, _monster_opponent)
-	_monster_opponent.fainted.connect(_win)
-	_monster_self.fainted.connect(_lose)
 	_monster_self.damage_taken.connect(_self_decrease_health)
 	_monster_opponent.damage_taken.connect(_opponent_decrease_health)
 	
@@ -33,6 +32,7 @@ func _ready() -> void:
 	
 	_event_queue.queue_started.connect(_move_buttons.disable)
 	_event_queue.queue_depleted.connect(_move_buttons.enable)
+	_event_queue.event_started.connect(self.handle_event)
 	_event_queue.event_started.connect(_textbox.handle_event)
 	_event_queue.event_started.connect(_move_animator.handle_event)
 	_event_queue.event_started.connect(%OpponentPlayerInfo.handle_event)
@@ -40,6 +40,8 @@ func _ready() -> void:
 	_event_queue.event_started.connect(%OpponentTexture.handle_event)
 	_event_queue.event_started.connect(%SelfTexture.handle_event)
 	_move_buttons.move_selected.connect(_on_move_selected)
+	_game_end_buttons.rematch_selected.connect(_rematch)
+	_game_end_buttons.new_game_selected.connect(_start_new_game)
 
 	for monster in [_monster_opponent, _monster_self]:
 		monster.move_used.connect(_on_move_used.bind(monster))
@@ -71,14 +73,20 @@ func _process_turn(monsters: Array[Monster], self_move_index: int) -> void:
 	_event_queue.add_event(MessageEvent.new(tr("AWAIT_CHOICE")))
 
 
-func _win() -> void:
-	_game_active = false
-	print("YOU WIN!!!")
+func handle_event(event: Event) -> void:
+	if not event is GameEndEvent:
+		return
+
+	_move_buttons.visible = false
+	_game_end_buttons.visible = true
 
 
-func _lose() -> void:
-	_game_active = false
-	print("YOU LOSE :'(")
+func _rematch() -> void:
+	get_tree().change_scene_to_file("res://battle_arena/battle_arena.tscn")
+
+
+func _start_new_game() -> void:
+	get_tree().change_scene_to_file("res://monster_select/monster_select.tscn")
 
 
 func _on_move_selected(move_index: int) -> void:
@@ -131,3 +139,4 @@ func _on_move_used(target: Monster, move: Move, is_successful: bool, monster: Mo
 func _add_fainted_message(monster: Monster) -> void:
 	var _message_event := MessageEvent.new(tr("FAINTED") % monster.get_monster_name())
 	_event_queue.add_event(_message_event)
+	_event_queue.add_event(GameEndEvent.new())
