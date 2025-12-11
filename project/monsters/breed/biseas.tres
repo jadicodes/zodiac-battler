@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="Breed" load_steps=9 format=3 uid="uid://dg0kj3kls4cxf"]
+
+[ext_resource type="Script" uid="uid://d2wg76v3vg2yt" path="res://moves/move.gd" id="1_chcf4"]
+[ext_resource type="Texture2D" uid="uid://l25ikwclsgny" path="res://monsters/breed/biseas_normal_back.png" id="1_m5eho"]
+[ext_resource type="Script" uid="uid://demay78bjjpnr" path="res://monsters/breed/breed.gd" id="2_drnq0"]
+[ext_resource type="Texture2D" uid="uid://c5hb0xf28j51k" path="res://monsters/breed/biseas_normal_front.png" id="2_t4b7i"]
+[ext_resource type="Resource" uid="uid://dkf2prdlcy567" path="res://moves/water/waterfall.tres" id="4_oouur"]
+[ext_resource type="Resource" uid="uid://bcfnpjqqvatxo" path="res://moves/wind/windsweep.tres" id="5_afgvj"]
+[ext_resource type="Resource" uid="uid://bnrwna5w240jw" path="res://moves/earth/stalagmite.tres" id="6_20g6e"]
+[ext_resource type="Resource" uid="uid://dh5umek4p7tyh" path="res://moves/water/tsunami.tres" id="7_dwpxe"]
+
+[resource]
+script = ExtResource("2_drnq0")
+_monster_name = "Biseas"
+_type = 3
+_moves = Array[ExtResource("1_chcf4")]([ExtResource("4_oouur"), ExtResource("5_afgvj"), ExtResource("6_20g6e"), ExtResource("7_dwpxe")])
+_health_points = 200
+_speed = 10
+_normal_texture_front = ExtResource("2_t4b7i")
+_normal_texture_back = ExtResource("1_m5eho")
+_attack_texture_front = ExtResource("2_t4b7i")
+_attack_texture_back = ExtResource("1_m5eho")
+metadata/_custom_type_script = "uid://demay78bjjpnr"

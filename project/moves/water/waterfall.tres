@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Move" load_steps=2 format=3 uid="uid://dkf2prdlcy567"]
+
+[ext_resource type="Script" uid="uid://d2wg76v3vg2yt" path="res://moves/move.gd" id="1_6nks2"]
+
+[resource]
+script = ExtResource("1_6nks2")
+_move_name = "Waterfall"
+_type = 3
+_attack_power = 90
+_attempts = 1
+_accuracy = 80
+metadata/_custom_type_script = "uid://d2wg76v3vg2yt"

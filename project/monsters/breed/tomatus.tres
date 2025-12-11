@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="Breed" load_steps=9 format=3 uid="uid://der5ogkwrmkv0"]
+
+[ext_resource type="Texture2D" uid="uid://kiyh6wxrebj6" path="res://monsters/breed/tomatus_normal_back.png" id="1_6awqp"]
+[ext_resource type="Script" uid="uid://d2wg76v3vg2yt" path="res://moves/move.gd" id="1_8ok17"]
+[ext_resource type="Script" uid="uid://demay78bjjpnr" path="res://monsters/breed/breed.gd" id="2_m67qb"]
+[ext_resource type="Texture2D" uid="uid://cs4o6nqed32jf" path="res://monsters/breed/tomatus_normal_front.png" id="2_vtiox"]
+[ext_resource type="Resource" uid="uid://m506tpvy5i0v" path="res://moves/earth/groundpound.tres" id="4_whaba"]
+[ext_resource type="Resource" uid="uid://dmawuoyv4y71l" path="res://moves/wind/tornado.tres" id="5_r7pxb"]
+[ext_resource type="Resource" uid="uid://bnrwna5w240jw" path="res://moves/earth/stalagmite.tres" id="6_v2bfo"]
+[ext_resource type="Resource" uid="uid://dh5umek4p7tyh" path="res://moves/water/tsunami.tres" id="7_ebqe8"]
+
+[resource]
+script = ExtResource("2_m67qb")
+_monster_name = "Tomatus"
+_moves = Array[ExtResource("1_8ok17")]([ExtResource("4_whaba"), ExtResource("5_r7pxb"), ExtResource("6_v2bfo"), ExtResource("7_ebqe8")])
+_health_points = 150
+_speed = 47
+_normal_texture_front = ExtResource("2_vtiox")
+_normal_texture_back = ExtResource("1_6awqp")
+_attack_texture_front = ExtResource("2_vtiox")
+_attack_texture_back = ExtResource("1_6awqp")
+metadata/_custom_type_script = "uid://demay78bjjpnr"

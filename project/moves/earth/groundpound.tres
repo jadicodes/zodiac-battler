@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Move" load_steps=2 format=3 uid="uid://m506tpvy5i0v"]
+
+[ext_resource type="Script" uid="uid://d2wg76v3vg2yt" path="res://moves/move.gd" id="1_byi6o"]
+
+[resource]
+script = ExtResource("1_byi6o")
+_move_name = "Groundpound"
+_attack_power = 80
+_attempts = 1
+_accuracy = 69
+metadata/_custom_type_script = "uid://d2wg76v3vg2yt"
