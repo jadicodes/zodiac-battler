@@ -114,6 +114,7 @@ func _on_move_used(target: Monster, move: Move, is_successful: bool, monster: Mo
 			_effectiveness_multiplier = NOT_EFFECTIVE_MULTIPLIER
 			_effectiveness_message_event = MessageEvent.new(tr("NOT_EFFECTIVE"))
 
+		# Same Type Attack Bonus (STAB)
 		if monster.get_type() == move.get_type():
 			_stab_multiplier = STAB_MULTIPLIER
 
