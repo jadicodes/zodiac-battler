@@ -14,6 +14,7 @@ func _ready() -> void:
 func set_moves(moves: Array[Move]) -> void:
 	for i in len(_buttons):
 		_buttons[i].text = moves[i].get_move_name()
+		_buttons[i].get_child(0).modulate = Types.get_color(moves[i].get_type())
 
 
 func enable() -> void:
