@@ -25,6 +25,10 @@ var _monster_select_state:
 
 
 func _ready() -> void:
+	%HoveredSelfPanel.visible = false
+	%SelfTexture.visible = false
+	%HoveredOpponentPanel.visible = false
+	%OpponentTexture.visible = false
 	_set_state(State.CHOOSE_SELF)
 
 
@@ -36,6 +40,7 @@ func _select_monster(breed: Breed) -> void:
 	if _monster_select_state == State.CHOOSE_SELF:
 		_self_monster = breed
 		_set_state(State.CHOOSE_OPPONENT)
+		_on_monster_select_button_hovered(breed)
 	elif _monster_select_state == State.CHOOSE_OPPONENT:
 		_opponent_monster = breed
 		_set_state(State.PLAY)
@@ -44,5 +49,11 @@ func _select_monster(breed: Breed) -> void:
 func _on_monster_select_button_hovered(breed: Breed) -> void:
 	if _monster_select_state == State.CHOOSE_SELF:
 		%HoveredSelfLabel.text = breed.get_monster_name()
+		%HoveredSelfPanel.visible = true
+		%SelfTexture.texture = breed.get_normal_texture_front()
+		%SelfTexture.visible = true
 	if _monster_select_state == State.CHOOSE_OPPONENT:
 		%HoveredOpponentLabel.text = breed.get_monster_name()
+		%HoveredOpponentPanel.visible = true
+		%OpponentTexture.texture = breed.get_normal_texture_front()
+		%OpponentTexture.visible = true
