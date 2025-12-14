@@ -42,4 +42,7 @@ func _select_monster(breed: Breed) -> void:
 
 
 func _on_monster_select_button_hovered(breed: Breed) -> void:
-	$HoveredMonsterPanel/HoveredMonsterLabel.text = breed.get_monster_name()
+	if _monster_select_state == State.CHOOSE_SELF:
+		%HoveredSelfLabel.text = breed.get_monster_name()
+	if _monster_select_state == State.CHOOSE_OPPONENT:
+		%HoveredOpponentLabel.text = breed.get_monster_name()

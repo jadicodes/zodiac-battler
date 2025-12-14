@@ -117,21 +117,49 @@ theme_override_font_sizes/font_size = 32
 text = "CHOOSE YOUR FIGHTER!"
 horizontal_alignment = 1
 
-[node name="HoveredMonsterPanel" type="Panel" parent="."]
+[node name="HoveredSelfPanel" type="Panel" parent="."]
+unique_name_in_owner = true
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
+anchors_preset = 4
 anchor_top = 0.5
-anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -65.5
-offset_top = -115.5
-offset_right = 65.5
-offset_bottom = -92.5
-grow_horizontal = 2
+offset_left = 25.0
+offset_top = -11.5
+offset_right = 156.0
+offset_bottom = 11.5
 grow_vertical = 2
 
-[node name="HoveredMonsterLabel" type="Label" parent="HoveredMonsterPanel"]
+[node name="HoveredSelfLabel" type="Label" parent="HoveredSelfPanel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 0.5
+offset_bottom = -2.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Embermane"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HoveredOpponentPanel" type="Panel" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -156.0
+offset_top = -11.5
+offset_right = -25.0
+offset_bottom = 11.5
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="HoveredOpponentLabel" type="Label" parent="HoveredOpponentPanel"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
