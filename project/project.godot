@@ -28,6 +28,7 @@ window/stretch/scale_mode="integer"
 
 [gui]
 
+theme/custom="uid://cdjio75647tek"
 theme/custom_font="uid://gptd25r7q4jy"
 
 [input]
