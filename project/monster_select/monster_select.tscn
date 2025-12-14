@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://dcq1jyvigtr0n"]
+[gd_scene load_steps=8 format=3 uid="uid://dcq1jyvigtr0n"]
 
 [ext_resource type="Script" uid="uid://inyctean21v7" path="res://monster_select/monster_select.gd" id="1_enmru"]
+[ext_resource type="Texture2D" uid="uid://ddciqycx3qxgj" path="res://monster_select/background_select.png" id="2_ciuqq"]
 [ext_resource type="PackedScene" uid="uid://dvkl7s1xn7hqc" path="res://monster_select/monster_select_button.tscn" id="2_v8ndl"]
 [ext_resource type="Resource" uid="uid://bmt1iiqphqefe" path="res://monsters/breed/harius.tres" id="3_7ewmc"]
 [ext_resource type="Resource" uid="uid://c8u3hw5eqn458" path="res://monsters/breed/embermane.tres" id="4_a6qg2"]
@@ -17,21 +18,25 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_enmru")
 
-[node name="SelectYourMonsterLabel" type="Label" parent="."]
-unique_name_in_owner = true
+[node name="Background" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 209.0
-offset_top = 23.0
-offset_right = 305.0
-offset_bottom = 36.0
-text = "select ur monster!"
+offset_right = 640.0
+offset_bottom = 360.0
+texture = ExtResource("2_ciuqq")
 
 [node name="GridContainer" type="GridContainer" parent="."]
-layout_mode = 0
-offset_left = 29.0
-offset_top = 120.0
-offset_right = 69.0
-offset_bottom = 160.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -138.0
+offset_top = -59.0
+offset_right = 138.0
+offset_bottom = 147.0
+grow_horizontal = 2
+grow_vertical = 2
 mouse_filter = 2
 columns = 4
 
@@ -51,7 +56,116 @@ _breed = ExtResource("5_o31d0")
 layout_mode = 2
 _breed = ExtResource("6_ciuqq")
 
+[node name="MonsterSelectButton5" parent="GridContainer" instance=ExtResource("2_v8ndl")]
+layout_mode = 2
+_breed = ExtResource("6_ciuqq")
+
+[node name="MonsterSelectButton6" parent="GridContainer" instance=ExtResource("2_v8ndl")]
+layout_mode = 2
+_breed = ExtResource("6_ciuqq")
+
+[node name="MonsterSelectButton7" parent="GridContainer" instance=ExtResource("2_v8ndl")]
+layout_mode = 2
+_breed = ExtResource("6_ciuqq")
+
+[node name="MonsterSelectButton8" parent="GridContainer" instance=ExtResource("2_v8ndl")]
+layout_mode = 2
+_breed = ExtResource("6_ciuqq")
+
+[node name="MonsterSelectButton9" parent="GridContainer" instance=ExtResource("2_v8ndl")]
+layout_mode = 2
+_breed = ExtResource("6_ciuqq")
+
+[node name="MonsterSelectButton10" parent="GridContainer" instance=ExtResource("2_v8ndl")]
+layout_mode = 2
+_breed = ExtResource("6_ciuqq")
+
+[node name="MonsterSelectButton11" parent="GridContainer" instance=ExtResource("2_v8ndl")]
+layout_mode = 2
+_breed = ExtResource("6_ciuqq")
+
+[node name="MonsterSelectButton12" parent="GridContainer" instance=ExtResource("2_v8ndl")]
+layout_mode = 2
+_breed = ExtResource("6_ciuqq")
+
+[node name="SelectYourMonsterPanel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -283.5
+offset_top = 15.0
+offset_right = 283.5
+offset_bottom = 55.0
+grow_horizontal = 2
+
+[node name="SelectYourMonsterLabel" type="Label" parent="SelectYourMonsterPanel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -112.0
+offset_top = -15.0
+offset_right = 112.0
+offset_bottom = 11.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "CHOOSE YOUR FIGHTER!"
+horizontal_alignment = 1
+
+[node name="HoveredMonsterPanel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -65.5
+offset_top = -115.5
+offset_right = 65.5
+offset_bottom = -92.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HoveredMonsterLabel" type="Label" parent="HoveredMonsterPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 0.5
+offset_bottom = -2.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Embermane"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="focus_entered" from="GridContainer/MonsterSelectButton" to="." method="_on_monster_select_button_focus_entered"]
+[connection signal="hovered" from="GridContainer/MonsterSelectButton" to="." method="_on_monster_select_button_hovered"]
 [connection signal="selected" from="GridContainer/MonsterSelectButton" to="." method="_select_monster"]
+[connection signal="hovered" from="GridContainer/MonsterSelectButton2" to="." method="_on_monster_select_button_hovered"]
 [connection signal="selected" from="GridContainer/MonsterSelectButton2" to="." method="_select_monster"]
+[connection signal="hovered" from="GridContainer/MonsterSelectButton3" to="." method="_on_monster_select_button_hovered"]
 [connection signal="selected" from="GridContainer/MonsterSelectButton3" to="." method="_select_monster"]
+[connection signal="hovered" from="GridContainer/MonsterSelectButton4" to="." method="_on_monster_select_button_hovered"]
 [connection signal="selected" from="GridContainer/MonsterSelectButton4" to="." method="_select_monster"]
+[connection signal="hovered" from="GridContainer/MonsterSelectButton5" to="." method="_on_monster_select_button_hovered"]
+[connection signal="selected" from="GridContainer/MonsterSelectButton5" to="." method="_select_monster"]
+[connection signal="hovered" from="GridContainer/MonsterSelectButton6" to="." method="_on_monster_select_button_hovered"]
+[connection signal="selected" from="GridContainer/MonsterSelectButton6" to="." method="_select_monster"]
+[connection signal="hovered" from="GridContainer/MonsterSelectButton7" to="." method="_on_monster_select_button_hovered"]
+[connection signal="selected" from="GridContainer/MonsterSelectButton7" to="." method="_select_monster"]
+[connection signal="hovered" from="GridContainer/MonsterSelectButton8" to="." method="_on_monster_select_button_hovered"]
+[connection signal="selected" from="GridContainer/MonsterSelectButton8" to="." method="_select_monster"]
+[connection signal="hovered" from="GridContainer/MonsterSelectButton9" to="." method="_on_monster_select_button_hovered"]
+[connection signal="selected" from="GridContainer/MonsterSelectButton9" to="." method="_select_monster"]
+[connection signal="hovered" from="GridContainer/MonsterSelectButton10" to="." method="_on_monster_select_button_hovered"]
+[connection signal="selected" from="GridContainer/MonsterSelectButton10" to="." method="_select_monster"]
+[connection signal="hovered" from="GridContainer/MonsterSelectButton11" to="." method="_on_monster_select_button_hovered"]
+[connection signal="selected" from="GridContainer/MonsterSelectButton11" to="." method="_select_monster"]
+[connection signal="hovered" from="GridContainer/MonsterSelectButton12" to="." method="_on_monster_select_button_hovered"]
+[connection signal="selected" from="GridContainer/MonsterSelectButton12" to="." method="_select_monster"]

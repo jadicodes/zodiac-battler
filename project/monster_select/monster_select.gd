@@ -39,3 +39,7 @@ func _select_monster(breed: Breed) -> void:
 	elif _monster_select_state == State.CHOOSE_OPPONENT:
 		_opponent_monster = breed
 		_set_state(State.PLAY)
+
+
+func _on_monster_select_button_hovered(breed: Breed) -> void:
+	$HoveredMonsterPanel/HoveredMonsterLabel.text = breed.get_monster_name()
