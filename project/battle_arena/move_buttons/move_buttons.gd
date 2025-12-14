@@ -9,6 +9,16 @@ signal move_selected(move_index: int)
 func _ready() -> void:
 	for i in len(_buttons):
 		_buttons[i].pressed.connect(move_selected.emit.bind(i))
+		_buttons[i].mouse_entered.connect(_buttons[i].grab_focus)
+		_buttons[i].mouse_exited.connect(grab_focus)
+	
+	set_focus_mode(Control.FOCUS_CLICK)
+	set_focus_next(_buttons[0].get_path())
+	set_focus_neighbor(Side.SIDE_LEFT, _buttons[0].get_path())
+	set_focus_neighbor(Side.SIDE_RIGHT, _buttons[1].get_path())
+	set_focus_neighbor(Side.SIDE_TOP, _buttons[2].get_path())
+	set_focus_neighbor(Side.SIDE_BOTTOM, _buttons[3].get_path())
+	grab_focus()
 
 
 func set_moves(moves: Array[Move]) -> void:
