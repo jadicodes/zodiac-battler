@@ -3,9 +3,9 @@
 [ext_resource type="Script" uid="uid://chnj814rebwya" path="res://battle_arena/health_bar.gd" id="1_btyba"]
 
 [node name="HealthBar" type="ProgressBar"]
-custom_minimum_size = Vector2(0, 24)
+custom_minimum_size = Vector2(0, 20)
 offset_right = 414.0
-offset_bottom = 29.0
+offset_bottom = 20.0
 value = 39.09
 show_percentage = false
 script = ExtResource("1_btyba")

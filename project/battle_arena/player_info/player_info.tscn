@@ -1,13 +1,17 @@
 [gd_scene load_steps=5 format=3 uid="uid://pw78k5es24iv"]
 
 [ext_resource type="Script" uid="uid://8xj0u1kfd7v5" path="res://battle_arena/player_info/player_info.gd" id="1_ynlxm"]
+[ext_resource type="Texture2D" uid="uid://u628dv3vjdij" path="res://ui/info_background.png" id="2_6s1yr"]
 [ext_resource type="PackedScene" uid="uid://bi5q4u2esn6us" path="res://battle_arena/health_bar.tscn" id="2_lem0m"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k54w4"]
-bg_color = Color(0.12156863, 0.09019608, 0.13725491, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i44ap"]
-bg_color = Color(0.8862745, 0.8862745, 0.8862745, 1)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7ldi1"]
+texture = ExtResource("2_6s1yr")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+axis_stretch_horizontal = 2
+region_rect = Rect2(0, 0, 48, 48)
 
 [node name="PlayerInfo" type="Control"]
 custom_minimum_size = Vector2(240, 64)
@@ -24,45 +28,34 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_k54w4")
+theme_override_styles/panel = SubResource("StyleBoxTexture_7ldi1")
 
-[node name="MarginContainer" type="MarginContainer" parent="OpponentInfo"]
+[node name="VBoxContainer" type="VBoxContainer" parent="OpponentInfo"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 5
-theme_override_constants/margin_top = 5
-theme_override_constants/margin_right = 5
-theme_override_constants/margin_bottom = 5
 
-[node name="VBoxContainer" type="VBoxContainer" parent="OpponentInfo/MarginContainer"]
-layout_mode = 2
-
-[node name="Panel" type="Panel" parent="OpponentInfo/MarginContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_i44ap")
-
-[node name="NameLabel" type="Label" parent="OpponentInfo/MarginContainer/VBoxContainer/Panel"]
+[node name="NameLabel" type="Label" parent="OpponentInfo/VBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 24)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 2
+size_flags_vertical = 3
 theme_override_colors/font_color = Color(0.12156863, 0.09019608, 0.13725491, 1)
 theme_override_font_sizes/font_size = 32
 text = "Opponent"
 horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="HealthBar" parent="OpponentInfo/MarginContainer/VBoxContainer" instance=ExtResource("2_lem0m")]
+[node name="MarginContainer" type="MarginContainer" parent="OpponentInfo/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 5
+
+[node name="HealthBar" parent="OpponentInfo/VBoxContainer/MarginContainer" instance=ExtResource("2_lem0m")]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 value = 100.0
-show_percentage = true
