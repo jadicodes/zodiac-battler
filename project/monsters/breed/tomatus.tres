@@ -4,9 +4,9 @@
 [ext_resource type="Script" uid="uid://d2wg76v3vg2yt" path="res://moves/move.gd" id="1_8ok17"]
 [ext_resource type="Script" uid="uid://demay78bjjpnr" path="res://monsters/breed/breed.gd" id="2_m67qb"]
 [ext_resource type="Texture2D" uid="uid://cs4o6nqed32jf" path="res://monsters/breed/tomatus_normal_front.png" id="2_vtiox"]
-[ext_resource type="Resource" uid="uid://m506tpvy5i0v" path="res://moves/earth/groundpound.tres" id="4_whaba"]
+[ext_resource type="Resource" uid="uid://m506tpvy5i0v" path="res://moves/earth/blast.tres" id="4_whaba"]
 [ext_resource type="Resource" uid="uid://dmawuoyv4y71l" path="res://moves/wind/tornado.tres" id="5_r7pxb"]
-[ext_resource type="Resource" uid="uid://bnrwna5w240jw" path="res://moves/earth/stalagmite.tres" id="6_v2bfo"]
+[ext_resource type="Resource" uid="uid://bnrwna5w240jw" path="res://moves/earth/quake.tres" id="6_v2bfo"]
 [ext_resource type="Resource" uid="uid://dh5umek4p7tyh" path="res://moves/water/tsunami.tres" id="7_ebqe8"]
 
 [resource]

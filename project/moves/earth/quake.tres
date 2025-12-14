@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Move" load_steps=3 format=3 uid="uid://bnrwna5w240jw"]
+
+[ext_resource type="Texture2D" uid="uid://c6m2deodv1yly" path="res://moves/earthball.png" id="1_45py6"]
+[ext_resource type="Script" uid="uid://d2wg76v3vg2yt" path="res://moves/move.gd" id="1_ol0yw"]
+
+[resource]
+script = ExtResource("1_ol0yw")
+_move_name = "Quake"
+_attack_power = 70
+_attempts = 1
+_accuracy = 75
+_move_texture = ExtResource("1_45py6")
+metadata/_custom_type_script = "uid://d2wg76v3vg2yt"

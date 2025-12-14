@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Move" load_steps=3 format=3 uid="uid://m506tpvy5i0v"]
+
+[ext_resource type="Texture2D" uid="uid://c6m2deodv1yly" path="res://moves/earthball.png" id="1_4ikba"]
+[ext_resource type="Script" uid="uid://d2wg76v3vg2yt" path="res://moves/move.gd" id="1_byi6o"]
+
+[resource]
+script = ExtResource("1_byi6o")
+_move_name = "Blast"
+_attack_power = 80
+_attempts = 1
+_accuracy = 69
+_move_texture = ExtResource("1_4ikba")
+metadata/_custom_type_script = "uid://d2wg76v3vg2yt"

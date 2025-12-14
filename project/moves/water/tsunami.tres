@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="Move" load_steps=2 format=3 uid="uid://dh5umek4p7tyh"]
+[gd_resource type="Resource" script_class="Move" load_steps=3 format=3 uid="uid://dh5umek4p7tyh"]
 
+[ext_resource type="Texture2D" uid="uid://cuusvn7owae2s" path="res://moves/waterball.png" id="1_o4yic"]
 [ext_resource type="Script" uid="uid://d2wg76v3vg2yt" path="res://moves/move.gd" id="1_yp61o"]
 
 [resource]
@@ -9,4 +10,5 @@ _type = 3
 _attack_power = 59
 _attempts = 1
 _accuracy = 100
+_move_texture = ExtResource("1_o4yic")
 metadata/_custom_type_script = "uid://d2wg76v3vg2yt"

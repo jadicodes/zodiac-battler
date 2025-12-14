@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://betteji863qrw"
-path="res://.godot/imported/ball.png-0a20aec26426198fd661faa9333144b7.ctex"
+uid="uid://c6m2deodv1yly"
+path="res://.godot/imported/earthball.png-0177e292cc373f677a7c08afbf54b56c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://moves/ball.png"
-dest_files=["res://.godot/imported/ball.png-0a20aec26426198fd661faa9333144b7.ctex"]
+source_file="res://moves/earthball.png"
+dest_files=["res://.godot/imported/earthball.png-0177e292cc373f677a7c08afbf54b56c.ctex"]
 
 [params]
 

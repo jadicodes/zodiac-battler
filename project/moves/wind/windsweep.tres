@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Move" load_steps=3 format=3 uid="uid://bcfnpjqqvatxo"]
 
 [ext_resource type="Script" uid="uid://d2wg76v3vg2yt" path="res://moves/move.gd" id="1_2jhww"]
-[ext_resource type="Texture2D" uid="uid://cu5d6nqc4qpwf" path="res://moves/square.png" id="1_nsvme"]
+[ext_resource type="Texture2D" uid="uid://doppmnojkx6kf" path="res://moves/windball.png" id="1_nsvme"]
 
 [resource]
 script = ExtResource("1_2jhww")
