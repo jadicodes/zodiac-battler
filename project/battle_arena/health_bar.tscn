@@ -1,31 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://bi5q4u2esn6us"]
+[gd_scene load_steps=2 format=3 uid="uid://bi5q4u2esn6us"]
 
 [ext_resource type="Script" uid="uid://chnj814rebwya" path="res://battle_arena/health_bar.gd" id="1_btyba"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btyba"]
-bg_color = Color(0.12156863, 0.09019608, 0.13725491, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-expand_margin_left = 3.0
-expand_margin_top = 3.0
-expand_margin_right = 3.0
-expand_margin_bottom = 3.0
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2vbjh"]
-bg_color = Color(0.9607843, 0.27450982, 0.29803923, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
 
 [node name="HealthBar" type="ProgressBar"]
 custom_minimum_size = Vector2(0, 24)
 offset_right = 414.0
 offset_bottom = 29.0
-theme_override_styles/background = SubResource("StyleBoxFlat_btyba")
-theme_override_styles/fill = SubResource("StyleBoxFlat_2vbjh")
 value = 39.09
 show_percentage = false
 script = ExtResource("1_btyba")
