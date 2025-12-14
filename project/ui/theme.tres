@@ -1,6 +1,18 @@
-[gd_resource type="Theme" load_steps=3 format=3 uid="uid://cdjio75647tek"]
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://cdjio75647tek"]
 
+[ext_resource type="Texture2D" uid="uid://bemx33vuhst8r" path="res://ui/button__hovered_background3.png" id="1_6lx7k"]
+[ext_resource type="Texture2D" uid="uid://cg580vujcs6o" path="res://ui/button_background.png" id="1_jf26r"]
 [ext_resource type="Texture2D" uid="uid://qal55edxf1k8" path="res://ui/ui_background.png" id="1_rqugq"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_iqtc0"]
+texture = ExtResource("1_6lx7k")
+texture_margin_left = 10.0
+texture_margin_right = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rqugq"]
+texture = ExtResource("1_jf26r")
+texture_margin_left = 10.0
+texture_margin_right = 10.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jf26r"]
 texture = ExtResource("1_rqugq")
@@ -12,6 +24,13 @@ axis_stretch_horizontal = 2
 region_rect = Rect2(0, 0, 48, 48)
 
 [resource]
+Button/colors/font_color = Color(0.12156863, 0.09019608, 0.13725491, 1)
+Button/colors/font_hover_color = Color(0.12156863, 0.09019608, 0.13725491, 1)
+Button/colors/font_hover_pressed_color = Color(0.12156863, 0.09019608, 0.13725491, 1)
+Button/styles/disabled = SubResource("StyleBoxTexture_iqtc0")
+Button/styles/hover = SubResource("StyleBoxTexture_iqtc0")
+Button/styles/normal = SubResource("StyleBoxTexture_rqugq")
+Button/styles/pressed = SubResource("StyleBoxTexture_iqtc0")
 Label/colors/font_color = Color(0.12156863, 0.09019608, 0.13725491, 1)
 Panel/styles/panel = SubResource("StyleBoxTexture_jf26r")
 RichTextLabel/colors/default_color = Color(0.12156863, 0.09019608, 0.13725491, 1)
