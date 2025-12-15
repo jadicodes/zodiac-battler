@@ -21,7 +21,7 @@ offset_right = 180.0
 offset_bottom = 64.0
 script = ExtResource("1_ynlxm")
 
-[node name="OpponentInfo" type="Panel" parent="."]
+[node name="Panel" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -30,7 +30,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_7ldi1")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="OpponentInfo"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -38,24 +38,24 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="NameLabel" type="Label" parent="OpponentInfo/VBoxContainer"]
+[node name="NameLabel" type="Label" parent="Panel/VBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 24)
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0.12156863, 0.09019608, 0.13725491, 1)
 theme_override_font_sizes/font_size = 32
-text = "Opponent"
+text = "Monster"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="OpponentInfo/VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="Panel/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 5
 
-[node name="HealthBar" parent="OpponentInfo/VBoxContainer/MarginContainer" instance=ExtResource("2_lem0m")]
+[node name="HealthBar" parent="Panel/VBoxContainer/MarginContainer" instance=ExtResource("2_lem0m")]
 unique_name_in_owner = true
 layout_mode = 2
 value = 100.0
