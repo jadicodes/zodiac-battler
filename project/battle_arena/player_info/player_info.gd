@@ -2,10 +2,12 @@ extends Control
 
 var _monster: Monster
 
+
 func set_player(player: Monster) -> void:
 	_monster = player
 	%NameLabel.text = player.get_monster_name()
 	%HealthBar.set_max_health(player.get_total_health_points())
+
 
 func handle_event(event: Event) -> void:
 	if not event is HealthChangeEvent:

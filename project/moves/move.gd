@@ -1,7 +1,7 @@
 class_name Move
 extends Resource
 
-const CRIT_CHANCE = 5
+const CRIT_CHANCE = 7
 
 @export var _move_name: String
 @export var _type: Types.Type

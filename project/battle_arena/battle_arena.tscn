@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bi4etr5s1v3kc"]
+[gd_scene load_steps=12 format=3 uid="uid://bi4etr5s1v3kc"]
 
 [ext_resource type="Script" uid="uid://bo28sbe3iokts" path="res://event_queue/event_queue.gd" id="1_etk7j"]
 [ext_resource type="Script" uid="uid://lxbgsksdckqd" path="res://battle_arena/battle_arena.gd" id="1_uvb1j"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bhg6lanvbq8qd" path="res://battle_arena/move_buttons/move_buttons.tscn" id="8_4layi"]
 [ext_resource type="PackedScene" uid="uid://eal3t0pucmf5" path="res://battle_arena/move_animator.tscn" id="8_akadq"]
 [ext_resource type="PackedScene" uid="uid://cpwhykbtk07y" path="res://battle_arena/game_end_buttons/game_end_buttons.tscn" id="8_pqvf1"]
+[ext_resource type="Script" uid="uid://dhwpg54rl6i3r" path="res://battle_arena/camera.gd" id="11_rbsue"]
 
 [node name="BattleArena" type="Control"]
 layout_mode = 3
@@ -62,10 +63,10 @@ size_flags_horizontal = 0
 [node name="OpponentTexture" type="TextureRect" parent="VBoxContainer/Control"]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 483.0
-offset_top = -18.0
-offset_right = 611.0
-offset_bottom = 110.0
+offset_left = 481.0
+offset_top = -9.0
+offset_right = 609.0
+offset_bottom = 119.0
 texture = ExtResource("5_etk7j")
 script = ExtResource("5_pqvf1")
 metadata/_custom_type_script = "uid://bp6n0fxfquenm"
@@ -74,9 +75,9 @@ metadata/_custom_type_script = "uid://bp6n0fxfquenm"
 unique_name_in_owner = true
 layout_mode = 0
 offset_left = 52.0
-offset_top = 120.0
+offset_top = 122.0
 offset_right = 180.0
-offset_bottom = 248.0
+offset_bottom = 250.0
 texture = ExtResource("5_etk7j")
 script = ExtResource("5_pqvf1")
 metadata/_custom_type_script = "uid://bp6n0fxfquenm"
@@ -116,3 +117,8 @@ metadata/_custom_type_script = "uid://bo28sbe3iokts"
 unique_name_in_owner = true
 _attack_self_marker = NodePath("../VBoxContainer/Control/AttackSelfMarker")
 _attack_opponent_marker = NodePath("../VBoxContainer/Control/AttackOpponentMarker")
+
+[node name="Camera" type="Camera2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(320, 180)
+script = ExtResource("11_rbsue")

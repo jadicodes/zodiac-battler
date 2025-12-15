@@ -35,6 +35,7 @@ func _ready() -> void:
 	_event_queue.queue_depleted.connect(_move_buttons.enable)
 	_event_queue.event_started.connect(self.handle_event)
 	_event_queue.event_started.connect(_textbox.handle_event)
+	_event_queue.event_started.connect(%Camera.handle_event)
 	_event_queue.event_started.connect(_move_animator.handle_event)
 	_event_queue.event_started.connect(%OpponentPlayerInfo.handle_event)
 	_event_queue.event_started.connect(%SelfPlayerInfo.handle_event)
@@ -129,6 +130,7 @@ func _on_move_used(target: Monster, move: Move, is_successful: bool, is_crit: bo
 		# Critical Hit
 		if is_crit:
 			_damage_multiplier *= CRIT_MULTIPLIER
+			_event_queue.add_event(CritEvent.new())
 			_event_queue.add_event(MessageEvent.new(tr("CRITICAL_HIT")))
 
 		@warning_ignore("narrowing_conversion", "integer_division")
