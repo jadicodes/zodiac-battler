@@ -11,4 +11,5 @@ _attack_power = 60
 _attempts = 1
 _accuracy = 100
 _move_texture = ExtResource("1_cahdi")
+_animation_type = 1
 metadata/_custom_type_script = "uid://d2wg76v3vg2yt"

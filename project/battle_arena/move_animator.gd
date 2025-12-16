@@ -35,31 +35,54 @@ func _handle_move_event(event: MoveEvent) -> void:
 	_sprite.texture = event.get_move().get_move_texture()
 	_particles.texture = event.get_move().get_move_texture()
 	_current_event.start(self)
-	_play_animation()
+	_play_animation(event.get_move().get_animation_type())
 
 
-func _play_animation() -> void:
+func _play_animation(animation_type: Move.AnimationType) -> void:
 	var start := _attack_self_marker.position
 	var end := _attack_opponent_marker.position
-	
+
 	if _current_event.get_monster() == _monster_opponent:
 		start = _attack_opponent_marker.position
 		end = _attack_self_marker.position
-
 
 	_sprite.position = start
 	_particles.position = start
 	_sprite.show()
 	_particles.emitting = true
+
+	var animation := _play_straight_animation
+
+	match animation_type:
+		Move.AnimationType.ZIGZAG:
+			animation = _play_zig_zag_animation
+
+	animation.call(start, end).finished.connect(_on_animation_complete)
+
+func _play_straight_animation(_start: Vector2, end: Vector2) -> Tween:
 	var tween := get_tree().create_tween()
-	tween.tween_property(
-		_sprite,
-		"position",
-		end,
-		0.5
-	)
+	tween.tween_property(_sprite, "position", end, 0.6)
 	tween.play()
-	tween.finished.connect(_on_animation_complete)
+
+	return tween
+
+
+func _play_zig_zag_animation(start: Vector2, end: Vector2) -> Tween:
+	var dir := end - start
+	var offset := Vector2(0.5, 0)
+	offset.y = -(dir.x * offset.x) / dir.y
+	offset = offset.normalized() * 32
+
+	var p1 := start + (dir / 3.0) + offset
+	var p2 := start + (dir * 2.0 / 3.0) - offset
+
+	var tween := get_tree().create_tween()
+	tween.tween_property(_sprite, "position", p1, 0.2)
+	tween.tween_property(_sprite, "position", p2, 0.2)
+	tween.tween_property(_sprite, "position", end, 0.2)
+	tween.play()
+
+	return tween
 
 
 func _on_animation_complete() -> void:
