@@ -2,12 +2,14 @@ class_name MonsterTextureRect
 extends TextureRect
 
 var _monster: Monster
+var _shake_dir := 1
 var _current_event: Event
 
 
 func set_player(player: Monster) -> void:
 	_monster = player
 	texture = _monster.get_texture()
+	_shake_dir = 1 if _monster.get_belongs_to_player() else -1
 
 
 func handle_event(event: Event) -> void:
@@ -41,7 +43,9 @@ func _claim_event(event: Event) -> void:
 func _play_attack_animation() -> Tween:
 	var tween := get_tree().create_tween()
 	tween.tween_property(self, "position", position + Vector2.UP * 20, 0.2)
+	tween.parallel().tween_property(self, "rotation", rotation + 0.1 * _shake_dir, 0.2)
 	tween.tween_property(self, "position", position, 0.25)
+	tween.parallel().tween_property(self, "rotation", rotation, 0.2)
 	tween.play()
 
 	return tween
@@ -49,9 +53,9 @@ func _play_attack_animation() -> Tween:
 
 func _play_damage_animation() -> Tween:
 	var tween := get_tree().create_tween()
-	tween.tween_property(self, "rotation", rotation + 0.1, 0.1)
-	tween.tween_property(self, "rotation", rotation - 0.1, 0.2)
-	tween.tween_property(self, "rotation", rotation + 0.1, 0.2)
+	tween.tween_property(self, "rotation", rotation - 0.1 * _shake_dir, 0.1)
+	tween.tween_property(self, "rotation", rotation + 0.1 * _shake_dir, 0.2)
+	tween.tween_property(self, "rotation", rotation - 0.1 * _shake_dir, 0.2)
 	tween.tween_property(self, "rotation", rotation, 0.1)
 	tween.play()
 
