@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d2wg76v3vg2yt" path="res://moves/move.gd" id="1_38s86"]
 [ext_resource type="Script" uid="uid://demay78bjjpnr" path="res://monsters/breed/breed.gd" id="1_leps3"]
-[ext_resource type="Resource" uid="uid://bcfnpjqqvatxo" path="res://moves/wind/windsweep.tres" id="2_n0xyt"]
+[ext_resource type="Resource" uid="uid://bcfnpjqqvatxo" path="res://moves/wind/sweep.tres" id="2_n0xyt"]
 [ext_resource type="Resource" uid="uid://dmawuoyv4y71l" path="res://moves/wind/tornado.tres" id="3_qkgky"]
 [ext_resource type="Resource" uid="uid://dkf2prdlcy567" path="res://moves/water/waterfall.tres" id="4_n0xyt"]
 [ext_resource type="Texture2D" uid="uid://u0c35urvspaw" path="res://monsters/breed/harius_normal_back.png" id="4_poymp"]
