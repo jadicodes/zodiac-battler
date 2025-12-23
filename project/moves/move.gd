@@ -4,6 +4,7 @@ extends Resource
 enum AnimationType {
 	STRAIGHT,
 	ZIGZAG,
+	SPIRAL,
 }
 
 const CRIT_CHANCE = 7

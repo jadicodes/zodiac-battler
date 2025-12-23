@@ -68,6 +68,8 @@ func _play_animation(animation_type: Move.AnimationType) -> void:
 	match animation_type:
 		Move.AnimationType.ZIGZAG:
 			animation = _play_zig_zag_animation
+		Move.AnimationType.SPIRAL:
+			animation = _play_spiral_animation
 
 	animation.call(start, end).finished.connect(_on_animation_complete)
 
@@ -90,6 +92,25 @@ func _play_zig_zag_animation(_start: Vector2, end: Vector2) -> Tween:
 	cross_tween.tween_property(_rail_cross, "position:y", -ANIMATION_SCALE, ANIMATION_LENGTH / 3.0)
 	cross_tween.tween_property(_rail_cross, "position:y", 0, ANIMATION_LENGTH / 3.0)
 	cross_tween.play()
+
+	return tween
+
+
+func _play_spiral_animation(_start: Vector2, end: Vector2) -> Tween:
+	var tween := get_tree().create_tween()
+	tween.tween_property(_rail_main, "position", end, ANIMATION_LENGTH)
+	tween.play()
+
+	var cross_tween := get_tree().create_tween()
+	cross_tween.tween_property(_rail_cross, "rotation", TAU * 2, ANIMATION_LENGTH).set_ease(Tween.EASE_IN_OUT)
+	cross_tween.play()
+
+
+	var mount_tween := get_tree().create_tween()
+	mount_tween.tween_property(_mount, "position:y", ANIMATION_SCALE, ANIMATION_LENGTH * 0.2).set_ease(Tween.EASE_OUT)
+	mount_tween.tween_property(_mount, "position:y", ANIMATION_SCALE, ANIMATION_LENGTH * 0.6)
+	mount_tween.tween_property(_mount, "position:y", 0, ANIMATION_LENGTH * 0.2).set_ease(Tween.EASE_OUT)
+	mount_tween.play()
 
 	return tween
 
