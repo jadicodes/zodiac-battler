@@ -18,4 +18,5 @@ _health_points = 80
 _speed = 40
 _normal_texture_front = ExtResource("5_qfrlm")
 _normal_texture_back = ExtResource("4_5bxvs")
+_focus_point = Vector2i(40, 60)
 metadata/_custom_type_script = "uid://demay78bjjpnr"

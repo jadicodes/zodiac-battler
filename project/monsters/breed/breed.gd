@@ -9,6 +9,7 @@ extends Resource
 
 @export var _normal_texture_front: Texture2D
 @export var _normal_texture_back: Texture2D
+@export var _focus_point := Vector2i(64, 64)
 
 
 func get_monster_name() -> String:

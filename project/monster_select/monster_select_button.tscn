@@ -12,7 +12,8 @@ texture_normal = ExtResource("1_w6k7g")
 stretch_mode = 0
 script = ExtResource("1_bekr3")
 
-[node name="Control" type="Control" parent="."]
+[node name="ClipBox" type="Control" parent="."]
+unique_name_in_owner = true
 clip_contents = true
 layout_mode = 1
 anchors_preset = 15
@@ -26,19 +27,22 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="MonsterTexture" type="TextureRect" parent="Control"]
+[node name="MonsterTexture" type="TextureRect" parent="ClipBox"]
 unique_name_in_owner = true
 clip_contents = true
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -31.0
-offset_top = -31.0
-offset_right = 31.0
-offset_bottom = 31.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset = Vector2(64, 64)
 texture = ExtResource("3_dbmqs")
 
 [connection signal="focus_entered" from="." to="." method="_on_focus_entered"]

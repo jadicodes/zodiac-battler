@@ -1,12 +1,15 @@
 extends TextureButton
 
-@export var _breed: Breed
+signal selected(breed)
+signal hovered(breed)
 
 const FRAME = preload("res://monster_select/frame.png")
 const FRAME_HOVER = preload("res://monster_select/frame_hover.png")
 
-signal selected(breed)
-signal hovered(breed)
+@onready var _clip_box: Control = %ClipBox
+@onready var _monster_texture: Control = %MonsterTexture
+
+@export var _breed: Breed
 
 func _ready() -> void:
 	texture_normal = FRAME
@@ -19,7 +22,15 @@ func get_breed() -> Breed:
 
 
 func _set_monster_texture() -> void:
-	%MonsterTexture.texture = _breed.get_normal_texture_front()
+	_monster_texture.texture = _breed.get_normal_texture_front()
+	_update_focus()
+
+
+func _update_focus() -> void:
+	var center := _clip_box.size / 2
+	print(_monster_texture.position)
+	_monster_texture.position = center - Vector2(_breed._focus_point)
+	print(_monster_texture.position)
 
 
 func _on_pressed() -> void:
