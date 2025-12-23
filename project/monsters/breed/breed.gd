@@ -9,8 +9,6 @@ extends Resource
 
 @export var _normal_texture_front: Texture2D
 @export var _normal_texture_back: Texture2D
-@export var _attack_texture_front: Texture2D
-@export var _attack_texture_back: Texture2D
 
 
 func get_monster_name() -> String:
@@ -39,11 +37,3 @@ func get_normal_texture_front() -> Texture2D:
 
 func get_normal_texture_back() -> Texture2D:
 	return _normal_texture_back
-
-
-func get_attack_texture_front() -> Texture2D:
-	return _attack_texture_front
-
-
-func get_attack_texture_back() -> Texture2D:
-	return _attack_texture_back
