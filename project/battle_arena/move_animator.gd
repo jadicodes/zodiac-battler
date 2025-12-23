@@ -1,8 +1,15 @@
 class_name MoveAnimator
 extends Node
 
+const ANIMATION_LENGTH = 0.7
+const ANIMATION_SCALE = 32.0
+
 @onready var _sprite: Sprite2D = %Sprite2D
 @onready var _particles: CPUParticles2D = %CPUParticles2D
+
+@onready var _rail_main: Node2D = %RailMain
+@onready var _rail_cross: Node2D = %RailCross
+@onready var _mount: Node2D = %Mount
 
 var _monster_self: Monster
 var _monster_opponent: Monster
@@ -13,7 +20,8 @@ var _current_event: MoveEvent
 
 
 func _process(_delta: float) -> void:
-	_particles.position = _sprite.position
+	_mount.global_rotation = 0
+
 
 func set_monsters(monster_self: Monster, monster_opponent: Monster) -> void:
 	_monster_self = monster_self
@@ -46,10 +54,14 @@ func _play_animation(animation_type: Move.AnimationType) -> void:
 		start = _attack_opponent_marker.position
 		end = _attack_self_marker.position
 
-	_sprite.position = start
-	_particles.position = start
+	_rail_main.global_position = start
+	_rail_cross.position = Vector2.ZERO
+	_rail_cross.rotation = 0
+	_mount.position = Vector2.ZERO
 	_sprite.show()
 	_particles.emitting = true
+
+	_rail_main.look_at(end)
 
 	var animation := _play_straight_animation
 
@@ -59,28 +71,25 @@ func _play_animation(animation_type: Move.AnimationType) -> void:
 
 	animation.call(start, end).finished.connect(_on_animation_complete)
 
+
 func _play_straight_animation(_start: Vector2, end: Vector2) -> Tween:
 	var tween := get_tree().create_tween()
-	tween.tween_property(_sprite, "position", end, 0.6)
+	tween.tween_property(_rail_main, "position", end, ANIMATION_LENGTH)
 	tween.play()
 
 	return tween
 
 
-func _play_zig_zag_animation(start: Vector2, end: Vector2) -> Tween:
-	var dir := end - start
-	var offset := Vector2(0.5, 0)
-	offset.y = -(dir.x * offset.x) / dir.y
-	offset = offset.normalized() * 32
-
-	var p1 := start + (dir / 3.0) + offset
-	var p2 := start + (dir * 2.0 / 3.0) - offset
-
+func _play_zig_zag_animation(_start: Vector2, end: Vector2) -> Tween:
 	var tween := get_tree().create_tween()
-	tween.tween_property(_sprite, "position", p1, 0.2)
-	tween.tween_property(_sprite, "position", p2, 0.2)
-	tween.tween_property(_sprite, "position", end, 0.2)
+	tween.tween_property(_rail_main, "position", end, ANIMATION_LENGTH)
 	tween.play()
+
+	var cross_tween := get_tree().create_tween()
+	cross_tween.tween_property(_rail_cross, "position:y", ANIMATION_SCALE, ANIMATION_LENGTH / 3.0)
+	cross_tween.tween_property(_rail_cross, "position:y", -ANIMATION_SCALE, ANIMATION_LENGTH / 3.0)
+	cross_tween.tween_property(_rail_cross, "position:y", 0, ANIMATION_LENGTH / 3.0)
+	cross_tween.play()
 
 	return tween
 

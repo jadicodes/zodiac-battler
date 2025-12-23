@@ -10,7 +10,16 @@ colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
 [node name="MoveAnimator" type="Node"]
 script = ExtResource("1_6m30k")
 
-[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+[node name="RailMain" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="RailCross" type="Node2D" parent="RailMain"]
+unique_name_in_owner = true
+
+[node name="Mount" type="Marker2D" parent="RailMain/RailCross"]
+unique_name_in_owner = true
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="RailMain/RailCross/Mount"]
 unique_name_in_owner = true
 emitting = false
 amount = 32
@@ -29,6 +38,6 @@ scale_amount_min = 0.25
 scale_amount_max = 0.25
 color_ramp = SubResource("Gradient_648bc")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="RailMain/RailCross/Mount"]
 unique_name_in_owner = true
 visible = false
