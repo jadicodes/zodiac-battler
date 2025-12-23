@@ -5,6 +5,7 @@ enum AnimationType {
 	STRAIGHT,
 	ZIGZAG,
 	SPIRAL,
+	WAVE,
 }
 
 const CRIT_CHANCE = 7

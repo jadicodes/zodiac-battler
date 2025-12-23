@@ -11,4 +11,5 @@ _attack_power = 90
 _attempts = 1
 _accuracy = 40
 _move_texture = ExtResource("1_7s2mr")
+_animation_type = 3
 metadata/_custom_type_script = "uid://d2wg76v3vg2yt"
