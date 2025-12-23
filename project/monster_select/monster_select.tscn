@@ -60,14 +60,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -138.0
-offset_top = -81.0
-offset_right = 138.0
-offset_bottom = 125.0
+offset_left = -102.0
+offset_top = -86.0
+offset_right = 102.0
+offset_bottom = 118.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-columns = 4
+columns = 2
 
 [node name="MonsterSelectButton" parent="GridContainer" instance=ExtResource("2_v8ndl")]
 layout_mode = 2
@@ -82,38 +82,6 @@ layout_mode = 2
 _breed = ExtResource("5_o31d0")
 
 [node name="MonsterSelectButton4" parent="GridContainer" instance=ExtResource("2_v8ndl")]
-layout_mode = 2
-_breed = ExtResource("6_ciuqq")
-
-[node name="MonsterSelectButton5" parent="GridContainer" instance=ExtResource("2_v8ndl")]
-layout_mode = 2
-_breed = ExtResource("6_ciuqq")
-
-[node name="MonsterSelectButton6" parent="GridContainer" instance=ExtResource("2_v8ndl")]
-layout_mode = 2
-_breed = ExtResource("6_ciuqq")
-
-[node name="MonsterSelectButton7" parent="GridContainer" instance=ExtResource("2_v8ndl")]
-layout_mode = 2
-_breed = ExtResource("6_ciuqq")
-
-[node name="MonsterSelectButton8" parent="GridContainer" instance=ExtResource("2_v8ndl")]
-layout_mode = 2
-_breed = ExtResource("6_ciuqq")
-
-[node name="MonsterSelectButton9" parent="GridContainer" instance=ExtResource("2_v8ndl")]
-layout_mode = 2
-_breed = ExtResource("6_ciuqq")
-
-[node name="MonsterSelectButton10" parent="GridContainer" instance=ExtResource("2_v8ndl")]
-layout_mode = 2
-_breed = ExtResource("6_ciuqq")
-
-[node name="MonsterSelectButton11" parent="GridContainer" instance=ExtResource("2_v8ndl")]
-layout_mode = 2
-_breed = ExtResource("6_ciuqq")
-
-[node name="MonsterSelectButton12" parent="GridContainer" instance=ExtResource("2_v8ndl")]
 layout_mode = 2
 _breed = ExtResource("6_ciuqq")
 
@@ -209,19 +177,3 @@ vertical_alignment = 1
 [connection signal="selected" from="GridContainer/MonsterSelectButton3" to="." method="_select_monster"]
 [connection signal="hovered" from="GridContainer/MonsterSelectButton4" to="." method="_on_monster_select_button_hovered"]
 [connection signal="selected" from="GridContainer/MonsterSelectButton4" to="." method="_select_monster"]
-[connection signal="hovered" from="GridContainer/MonsterSelectButton5" to="." method="_on_monster_select_button_hovered"]
-[connection signal="selected" from="GridContainer/MonsterSelectButton5" to="." method="_select_monster"]
-[connection signal="hovered" from="GridContainer/MonsterSelectButton6" to="." method="_on_monster_select_button_hovered"]
-[connection signal="selected" from="GridContainer/MonsterSelectButton6" to="." method="_select_monster"]
-[connection signal="hovered" from="GridContainer/MonsterSelectButton7" to="." method="_on_monster_select_button_hovered"]
-[connection signal="selected" from="GridContainer/MonsterSelectButton7" to="." method="_select_monster"]
-[connection signal="hovered" from="GridContainer/MonsterSelectButton8" to="." method="_on_monster_select_button_hovered"]
-[connection signal="selected" from="GridContainer/MonsterSelectButton8" to="." method="_select_monster"]
-[connection signal="hovered" from="GridContainer/MonsterSelectButton9" to="." method="_on_monster_select_button_hovered"]
-[connection signal="selected" from="GridContainer/MonsterSelectButton9" to="." method="_select_monster"]
-[connection signal="hovered" from="GridContainer/MonsterSelectButton10" to="." method="_on_monster_select_button_hovered"]
-[connection signal="selected" from="GridContainer/MonsterSelectButton10" to="." method="_select_monster"]
-[connection signal="hovered" from="GridContainer/MonsterSelectButton11" to="." method="_on_monster_select_button_hovered"]
-[connection signal="selected" from="GridContainer/MonsterSelectButton11" to="." method="_select_monster"]
-[connection signal="hovered" from="GridContainer/MonsterSelectButton12" to="." method="_on_monster_select_button_hovered"]
-[connection signal="selected" from="GridContainer/MonsterSelectButton12" to="." method="_select_monster"]

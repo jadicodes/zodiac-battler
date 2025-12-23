@@ -5,7 +5,11 @@
 [ext_resource type="Texture2D" uid="uid://c5hb0xf28j51k" path="res://monsters/breed/biseas_normal_front.png" id="3_dbmqs"]
 
 [node name="MonsterSelectButton" type="TextureButton"]
+custom_minimum_size = Vector2(100, 100)
+offset_right = 100.0
+offset_bottom = 100.0
 texture_normal = ExtResource("1_w6k7g")
+stretch_mode = 0
 script = ExtResource("1_bekr3")
 
 [node name="Control" type="Control" parent="."]
@@ -14,10 +18,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 4.0
-offset_top = 4.0
-offset_right = -4.0
-offset_bottom = -4.0
+offset_left = 6.0
+offset_top = 6.0
+offset_right = -6.0
+offset_bottom = -6.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -33,6 +37,8 @@ offset_left = -31.0
 offset_top = -31.0
 offset_right = 31.0
 offset_bottom = 31.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("3_dbmqs")
 
 [connection signal="focus_entered" from="." to="." method="_on_focus_entered"]
