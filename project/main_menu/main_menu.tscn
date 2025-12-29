@@ -1,6 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://s4le57bvuajl"]
+[gd_scene load_steps=11 format=3 uid="uid://s4le57bvuajl"]
 
 [ext_resource type="Script" uid="uid://4nkvuqau7ehs" path="res://main_menu/main_menu.gd" id="1_oa53l"]
+[ext_resource type="Texture2D" uid="uid://b0n0w85r0833q" path="res://background.png" id="2_d3a7t"]
+[ext_resource type="Texture2D" uid="uid://cio3181rlca2f" path="res://main_menu/fire_stand.png" id="3_6at21"]
+[ext_resource type="Texture2D" uid="uid://c5hb0xf28j51k" path="res://monsters/breed/biseas_normal_front.png" id="3_6tl50"]
+[ext_resource type="Texture2D" uid="uid://dbowexor8mge7" path="res://main_menu/water_stand.png" id="3_og6xe"]
+[ext_resource type="Texture2D" uid="uid://dqf37un58fnh7" path="res://monsters/breed/embermane_normal_front.png" id="4_t6bnd"]
+[ext_resource type="Texture2D" uid="uid://buekm34pnlo1k" path="res://monsters/breed/harius_normal_front.png" id="5_ia84y"]
+[ext_resource type="Texture2D" uid="uid://cs4o6nqed32jf" path="res://monsters/breed/tomatus_normal_front.png" id="6_6at21"]
+[ext_resource type="Texture2D" uid="uid://bhd83iskeun1p" path="res://main_menu/earth_stand.png" id="6_t6bnd"]
+[ext_resource type="Texture2D" uid="uid://dfaxq3a2bu4sj" path="res://main_menu/wind_stand.png" id="7_ia84y"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -11,6 +20,12 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_oa53l")
 
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_d3a7t")
+
 [node name="TitleLabel" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 8
@@ -19,11 +34,13 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -144.0
-offset_top = -101.0
+offset_top = -89.0
 offset_right = 144.0
-offset_bottom = -50.0
+offset_bottom = -38.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0.8862745, 0.8862745, 0.8862745, 1)
+theme_override_constants/outline_size = 16
 theme_override_font_sizes/font_size = 64
 text = "Zodiac Battler"
 
@@ -44,12 +61,65 @@ grow_vertical = 2
 [node name="StartGameButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_font_sizes/font_size = 32
 text = "Start"
 
 [node name="CreditsButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_font_sizes/font_size = 32
 text = "Credits"
+
+[node name="WaterStand" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 428.0
+offset_top = 48.0
+offset_right = 656.0
+offset_bottom = 384.0
+texture = ExtResource("3_og6xe")
+
+[node name="BiseasNormalFront" type="Sprite2D" parent="WaterStand"]
+position = Vector2(140, 43)
+texture = ExtResource("3_6tl50")
+
+[node name="FireStand" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -54.0
+offset_top = 78.0
+offset_right = 586.0
+offset_bottom = 438.0
+texture = ExtResource("3_6at21")
+
+[node name="EmbermaneNormalFront" type="Sprite2D" parent="FireStand"]
+position = Vector2(132, 7)
+rotation = 3.1415927
+scale = Vector2(1, -1)
+texture = ExtResource("4_t6bnd")
+
+[node name="EarthStand" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 225.0
+offset_right = 206.0
+offset_bottom = 361.0
+texture = ExtResource("6_t6bnd")
+
+[node name="TomatusNormalFront" type="Sprite2D" parent="EarthStand"]
+position = Vector2(82, -34)
+rotation = -3.1415925
+scale = Vector2(1, -1)
+texture = ExtResource("6_6at21")
+
+[node name="WindStand" type="Sprite2D" parent="."]
+position = Vector2(492.8247, 328)
+scale = Vector2(-1.0021504, 1)
+texture = ExtResource("7_ia84y")
+
+[node name="HariusNormalFront" type="Sprite2D" parent="WindStand"]
+position = Vector2(-5.1641846, -100)
+rotation = 3.1415927
+scale = Vector2(0.9978542, -1)
+texture = ExtResource("5_ia84y")
 
 [connection signal="pressed" from="VBoxContainer/StartGameButton" to="." method="start_game"]
 [connection signal="pressed" from="VBoxContainer/CreditsButton" to="." method="show_credits"]
