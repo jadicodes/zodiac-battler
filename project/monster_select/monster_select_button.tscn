@@ -19,7 +19,7 @@ texture_margin_top = 6.0
 texture_margin_right = 6.0
 texture_margin_bottom = 6.0
 
-[node name="MonsterSelectButton" type="Button"]
+[node name="MonsterSelectButton" type="Button" groups=["select_buttons"]]
 custom_minimum_size = Vector2(100, 100)
 offset_right = 100.0
 offset_bottom = 100.0

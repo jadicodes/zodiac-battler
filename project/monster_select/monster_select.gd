@@ -37,16 +37,20 @@ func _set_state(state: int) -> void:
 
 
 func _select_monster(breed: Breed) -> void:
+	_set_portrait(breed)
 	if _monster_select_state == State.CHOOSE_SELF:
 		_self_monster = breed
 		_set_state(State.CHOOSE_OPPONENT)
-		_on_monster_select_button_hovered(breed)
 	elif _monster_select_state == State.CHOOSE_OPPONENT:
 		_opponent_monster = breed
 		_set_state(State.PLAY)
 
 
 func _on_monster_select_button_hovered(breed: Breed) -> void:
+	_set_portrait(breed)
+
+
+func _set_portrait(breed) -> void:
 	if _monster_select_state == State.CHOOSE_SELF:
 		%HoveredSelfLabel.text = breed.get_monster_name()
 		%HoveredSelfPanel.visible = true
@@ -57,3 +61,10 @@ func _on_monster_select_button_hovered(breed: Breed) -> void:
 		%HoveredOpponentPanel.visible = true
 		%OpponentTexture.texture = breed.get_normal_texture_front()
 		%OpponentTexture.visible = true
+
+
+func _on_random_button_pressed() -> void:
+	var all_possible_monsters = []
+	for child in get_tree().get_nodes_in_group("select_buttons"):
+		all_possible_monsters.append(child.get_breed())
+	_select_monster(all_possible_monsters.pick_random())
