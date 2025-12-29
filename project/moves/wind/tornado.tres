@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Move" load_steps=3 format=3 uid="uid://dmawuoyv4y71l"]
 
-[ext_resource type="Texture2D" uid="uid://doppmnojkx6kf" path="res://moves/windball.png" id="1_cahdi"]
+[ext_resource type="Texture2D" uid="uid://bwhre1r8lsikn" path="res://moves/tornadoball.png" id="1_cahdi"]
 [ext_resource type="Script" uid="uid://d2wg76v3vg2yt" path="res://moves/move.gd" id="1_u4gfu"]
 
 [resource]
@@ -11,5 +11,5 @@ _attack_power = 60
 _attempts = 1
 _accuracy = 100
 _move_texture = ExtResource("1_cahdi")
-_animation_type = 1
+_animation_type = 2
 metadata/_custom_type_script = "uid://d2wg76v3vg2yt"
