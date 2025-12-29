@@ -78,8 +78,12 @@ offset_right = 656.0
 offset_bottom = 384.0
 texture = ExtResource("3_og6xe")
 
-[node name="BiseasNormalFront" type="Sprite2D" parent="WaterStand"]
-position = Vector2(140, 43)
+[node name="BiseasNormalFront" type="TextureRect" parent="WaterStand"]
+layout_mode = 0
+offset_left = 76.0
+offset_top = -16.0
+offset_right = 204.0
+offset_bottom = 112.0
 texture = ExtResource("3_6tl50")
 
 [node name="FireStand" type="TextureRect" parent="."]
@@ -88,10 +92,15 @@ offset_left = -54.0
 offset_top = 78.0
 offset_right = 586.0
 offset_bottom = 438.0
+mouse_filter = 2
 texture = ExtResource("3_6at21")
 
-[node name="EmbermaneNormalFront" type="Sprite2D" parent="FireStand"]
-position = Vector2(132, 7)
+[node name="EmbermaneNormalFront" type="TextureRect" parent="FireStand"]
+layout_mode = 0
+offset_left = 195.0
+offset_top = -57.0
+offset_right = 323.0
+offset_bottom = 71.0
 rotation = 3.1415927
 scale = Vector2(1, -1)
 texture = ExtResource("4_t6bnd")
@@ -104,20 +113,32 @@ offset_right = 206.0
 offset_bottom = 361.0
 texture = ExtResource("6_t6bnd")
 
-[node name="TomatusNormalFront" type="Sprite2D" parent="EarthStand"]
-position = Vector2(82, -34)
+[node name="TomatusNormalFront" type="TextureRect" parent="EarthStand"]
+layout_mode = 0
+offset_left = 153.0
+offset_top = -98.0
+offset_right = 281.0
+offset_bottom = 30.0
 rotation = -3.1415925
 scale = Vector2(1, -1)
 texture = ExtResource("6_6at21")
 
-[node name="WindStand" type="Sprite2D" parent="."]
-position = Vector2(492.8247, 328)
+[node name="WindStand" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 541.0
+offset_top = 294.0
+offset_right = 704.0
+offset_bottom = 430.0
 scale = Vector2(-1.0021504, 1)
 texture = ExtResource("7_ia84y")
 
-[node name="HariusNormalFront" type="Sprite2D" parent="WindStand"]
-position = Vector2(-5.1641846, -100)
-rotation = 3.1415927
+[node name="HariusNormalFront" type="TextureRect" parent="WindStand"]
+layout_mode = 0
+offset_left = 144.68887
+offset_top = -100.0
+offset_right = 272.6889
+offset_bottom = 28.0
+rotation = -3.1415925
 scale = Vector2(0.9978542, -1)
 texture = ExtResource("5_ia84y")
 
