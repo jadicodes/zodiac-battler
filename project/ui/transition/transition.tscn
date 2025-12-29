@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://bk5l3nsrnt2aw"]
+
+[ext_resource type="Script" uid="uid://bwg7bswhadk5h" path="res://ui/transition/transition.gd" id="1_8qd52"]
+[ext_resource type="Shader" uid="uid://ewg4vjnmcbvx" path="res://ui/transition/transition.gdshader" id="2_78nbd"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n56rg"]
+shader = ExtResource("2_78nbd")
+shader_parameter/num_lines = 16.0
+shader_parameter/y_threshold = 0.0
+shader_parameter/line_color_a = Color(0.8862745, 0.8862745, 0.8862745, 1)
+shader_parameter/line_color_b = Color(0.12156863, 0.09019608, 0.13725491, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bvx3v"]
+
+[node name="Transistion" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8qd52")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_n56rg")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_bvx3v")

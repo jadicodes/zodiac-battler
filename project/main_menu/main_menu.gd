@@ -5,7 +5,7 @@ const CREDITS_SCENE = preload("res://main_menu/credits.tscn")
 
 
 func start_game() -> void:
-	get_tree().change_scene_to_packed(MONSTER_SELECT_SCENE)
+	Transition.to(MONSTER_SELECT_SCENE)
 
 
 func show_credits() -> void:

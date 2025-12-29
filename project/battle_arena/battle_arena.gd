@@ -1,5 +1,8 @@
 extends Control
 
+const BATTLE_ARENA_SCENE := preload("res://battle_arena/battle_arena.tscn")
+const MONSTER_SELECT_SCENE = preload("res://monster_select/monster_select.tscn")
+
 const DAMAGE_DIVIDER: float = 10
 const DEFAULT_MULTIPLER: float = 1.0
 const SUPER_EFFECTIVE_MULTIPLIER: float = 1.5
@@ -84,11 +87,11 @@ func handle_event(event: Event) -> void:
 
 
 func _rematch() -> void:
-	get_tree().change_scene_to_file("res://battle_arena/battle_arena.tscn")
+	Transition.to(BATTLE_ARENA_SCENE)
 
 
 func _start_new_game() -> void:
-	get_tree().change_scene_to_file("res://monster_select/monster_select.tscn")
+	Transition.to(MONSTER_SELECT_SCENE)
 
 
 func _on_move_selected(move_index: int) -> void:

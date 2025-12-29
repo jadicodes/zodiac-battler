@@ -1,4 +1,4 @@
 extends Node
 
-var self_breed: Breed = preload("res://monsters/breed/embermane.tres")
-var opponent_breed: Breed = preload("res://monsters/breed/harius.tres")
+var self_breed: Breed = null
+var opponent_breed: Breed = null

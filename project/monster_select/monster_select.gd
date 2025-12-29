@@ -1,5 +1,7 @@
 extends Control
 
+const BATTLE_ARENA_SCENE := preload("res://battle_arena/battle_arena.tscn")
+
 var _self_monster: Breed
 var _opponent_monster: Breed
 
@@ -20,7 +22,7 @@ var _monster_select_state:
 		if state == State.PLAY:
 			MonsterSelections.self_breed = _self_monster
 			MonsterSelections.opponent_breed = _opponent_monster
-			get_tree().change_scene_to_file("res://battle_arena/battle_arena.tscn")
+			Transition.to(BATTLE_ARENA_SCENE)
 		_monster_select_state = state
 
 
