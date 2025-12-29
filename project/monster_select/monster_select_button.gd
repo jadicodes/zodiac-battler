@@ -1,10 +1,7 @@
-extends TextureButton
+extends Button
 
 signal selected(breed)
 signal hovered(breed)
-
-const FRAME = preload("res://monster_select/frame.png")
-const FRAME_HOVER = preload("res://monster_select/frame_hover.png")
 
 @onready var _clip_box: Control = %ClipBox
 @onready var _monster_texture: Control = %MonsterTexture
@@ -12,8 +9,6 @@ const FRAME_HOVER = preload("res://monster_select/frame_hover.png")
 @export var _breed: Breed
 
 func _ready() -> void:
-	texture_normal = FRAME
-	texture_hover = FRAME_HOVER
 	_set_monster_texture()
 
 
