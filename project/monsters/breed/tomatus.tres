@@ -13,8 +13,8 @@
 script = ExtResource("2_m67qb")
 _monster_name = "Tomatus"
 _moves = Array[ExtResource("1_8ok17")]([ExtResource("4_whaba"), ExtResource("5_r7pxb"), ExtResource("6_v2bfo"), ExtResource("5_whaba")])
-_health_points = 150
-_speed = 47
+_health_points = 100
+_speed = 30
 _normal_texture_front = ExtResource("2_vtiox")
 _normal_texture_back = ExtResource("1_6awqp")
 _focus_point = Vector2i(56, 74)

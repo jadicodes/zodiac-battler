@@ -1,11 +1,12 @@
-[gd_scene load_steps=12 format=3 uid="uid://bi4etr5s1v3kc"]
+[gd_scene load_steps=13 format=3 uid="uid://bi4etr5s1v3kc"]
 
 [ext_resource type="Script" uid="uid://bo28sbe3iokts" path="res://event_queue/event_queue.gd" id="1_etk7j"]
 [ext_resource type="Script" uid="uid://lxbgsksdckqd" path="res://battle_arena/battle_arena.gd" id="1_uvb1j"]
+[ext_resource type="Texture2D" uid="uid://buekm34pnlo1k" path="res://monsters/breed/harius_normal_front.png" id="4_umwm4"]
 [ext_resource type="Texture2D" uid="uid://c5og4m5hglu7s" path="res://battle_arena/background.png" id="5_4layi"]
-[ext_resource type="Texture2D" uid="uid://c8dwb7jo0e1jy" path="res://icon.svg" id="5_etk7j"]
 [ext_resource type="PackedScene" uid="uid://bny50y62exih" path="res://battle_arena/textbox/textbox.tscn" id="5_ewqu3"]
 [ext_resource type="Script" uid="uid://bp6n0fxfquenm" path="res://battle_arena/monster_texture_rect.gd" id="5_pqvf1"]
+[ext_resource type="Texture2D" uid="uid://tlvb0q0k32vt" path="res://monsters/breed/embermane_normal_back.png" id="6_87q6l"]
 [ext_resource type="PackedScene" uid="uid://pw78k5es24iv" path="res://battle_arena/player_info/player_info.tscn" id="7_uvb1j"]
 [ext_resource type="PackedScene" uid="uid://bhg6lanvbq8qd" path="res://battle_arena/move_buttons/move_buttons.tscn" id="8_4layi"]
 [ext_resource type="PackedScene" uid="uid://eal3t0pucmf5" path="res://battle_arena/move_animator.tscn" id="8_akadq"]
@@ -68,7 +69,7 @@ offset_top = -9.0
 offset_right = 609.0
 offset_bottom = 119.0
 pivot_offset = Vector2(64, 96)
-texture = ExtResource("5_etk7j")
+texture = ExtResource("4_umwm4")
 script = ExtResource("5_pqvf1")
 metadata/_custom_type_script = "uid://bp6n0fxfquenm"
 
@@ -80,7 +81,7 @@ offset_top = 122.0
 offset_right = 180.0
 offset_bottom = 250.0
 pivot_offset = Vector2(64, 96)
-texture = ExtResource("5_etk7j")
+texture = ExtResource("6_87q6l")
 script = ExtResource("5_pqvf1")
 metadata/_custom_type_script = "uid://bp6n0fxfquenm"
 
