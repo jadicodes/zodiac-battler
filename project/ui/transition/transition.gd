@@ -26,6 +26,7 @@ func to(scene: PackedScene) -> void:
 func _start() -> void:
 	_y_threshold = 0.0
 	_update_y_threshold()
+	_update_colors()
 	_panel.visible = true
 	var tween := get_tree().create_tween()
 	tween.tween_property(self, "_y_threshold", 1.0, ANIMATION_LENGTH)
@@ -45,6 +46,16 @@ func _end() -> void:
 func _complete() -> void:
 	_to_scene = null
 	_panel.visible = false
+
+
+func _update_colors() -> void:
+	if not MonsterSelections.is_set():
+		_panel.material.set_shader_parameter("line_color_a", Color.hex(0xe2e2e2ff))
+		_panel.material.set_shader_parameter("line_color_b", Color.hex(0x1f1723ff))
+		return
+
+	_panel.material.set_shader_parameter("line_color_a", Types.get_color(MonsterSelections.self_breed.get_type()))
+	_panel.material.set_shader_parameter("line_color_b", Types.get_secondary_color(MonsterSelections.opponent_breed.get_type()))
 
 
 func _update_y_threshold() -> void:

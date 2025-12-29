@@ -91,6 +91,7 @@ func _rematch() -> void:
 
 
 func _start_new_game() -> void:
+	MonsterSelections.reset()
 	Transition.to(MONSTER_SELECT_SCENE)
 
 
