@@ -28,9 +28,7 @@ func _set_monster_texture() -> void:
 
 func _update_focus() -> void:
 	var center := _clip_box.size / 2
-	print(_monster_texture.position)
 	_monster_texture.position = center - Vector2(_breed._focus_point)
-	print(_monster_texture.position)
 
 
 func _on_pressed() -> void:
