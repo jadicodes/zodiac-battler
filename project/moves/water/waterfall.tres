@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_6nks2")
-_move_name = "Waterfall"
+_move_name = "Puddle"
 _type = 3
 _attack_power = 90
 _attempts = 1

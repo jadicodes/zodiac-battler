@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Move" load_steps=3 format=3 uid="uid://cqvy6lpslde1l"]
+
+[ext_resource type="Script" uid="uid://d2wg76v3vg2yt" path="res://moves/move.gd" id="1_h5y5j"]
+[ext_resource type="Texture2D" uid="uid://iejv25llplml" path="res://moves/sporeball.png" id="1_wf338"]
+
+[resource]
+script = ExtResource("1_h5y5j")
+_move_name = "Spore"
+_attack_power = 50
+_accuracy = 100
+_move_texture = ExtResource("1_wf338")
+_animation_type = 3
+metadata/_custom_type_script = "uid://d2wg76v3vg2yt"

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://doppmnojkx6kf"
-path="res://.godot/imported/windball.png-298104d006405ab10adbc8bcc53a9e7a.ctex"
+uid="uid://uiv2bchfb72y"
+path="res://.godot/imported/tsunamiball.png-99943585537fd80fe71fc3c36b850f92.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://moves/windball.png"
-dest_files=["res://.godot/imported/windball.png-298104d006405ab10adbc8bcc53a9e7a.ctex"]
+source_file="res://moves/tsunamiball.png"
+dest_files=["res://.godot/imported/tsunamiball.png-99943585537fd80fe71fc3c36b850f92.ctex"]
 
 [params]
 
