@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://s4le57bvuajl"]
+[gd_scene load_steps=12 format=3 uid="uid://s4le57bvuajl"]
 
 [ext_resource type="Script" uid="uid://4nkvuqau7ehs" path="res://main_menu/main_menu.gd" id="1_oa53l"]
 [ext_resource type="Texture2D" uid="uid://b0n0w85r0833q" path="res://background.png" id="2_d3a7t"]
 [ext_resource type="Texture2D" uid="uid://cio3181rlca2f" path="res://main_menu/fire_stand.png" id="3_6at21"]
 [ext_resource type="Texture2D" uid="uid://c5hb0xf28j51k" path="res://monsters/breed/biseas_normal_front.png" id="3_6tl50"]
+[ext_resource type="FontFile" uid="uid://5hl2ky3wtwh6" path="res://main_menu/MMXSNES.ttf" id="3_mvfl2"]
 [ext_resource type="Texture2D" uid="uid://dbowexor8mge7" path="res://main_menu/water_stand.png" id="3_og6xe"]
 [ext_resource type="Texture2D" uid="uid://dqf37un58fnh7" path="res://monsters/breed/embermane_normal_front.png" id="4_t6bnd"]
 [ext_resource type="Texture2D" uid="uid://buekm34pnlo1k" path="res://monsters/breed/harius_normal_front.png" id="5_ia84y"]
@@ -33,16 +34,18 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -144.0
-offset_top = -89.0
-offset_right = 144.0
-offset_bottom = -38.0
+offset_left = -170.0
+offset_top = -84.0
+offset_right = 170.0
+offset_bottom = -33.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.8862745, 0.8862745, 0.8862745, 1)
 theme_override_constants/outline_size = 16
+theme_override_fonts/font = ExtResource("3_mvfl2")
 theme_override_font_sizes/font_size = 64
-text = "Zodiac Battler"
+text = "TETRAMENTAL"
+horizontal_alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -88,10 +91,10 @@ texture = ExtResource("3_6tl50")
 
 [node name="FireStand" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = -54.0
-offset_top = 78.0
-offset_right = 586.0
-offset_bottom = 438.0
+offset_left = -64.0
+offset_top = 92.0
+offset_right = 576.0
+offset_bottom = 452.0
 mouse_filter = 2
 texture = ExtResource("3_6at21")
 
