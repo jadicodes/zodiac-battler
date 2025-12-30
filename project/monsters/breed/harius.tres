@@ -4,17 +4,17 @@
 [ext_resource type="Script" uid="uid://demay78bjjpnr" path="res://monsters/breed/breed.gd" id="1_leps3"]
 [ext_resource type="Resource" uid="uid://bcfnpjqqvatxo" path="res://moves/wind/sweep.tres" id="2_n0xyt"]
 [ext_resource type="Resource" uid="uid://dmawuoyv4y71l" path="res://moves/wind/tornado.tres" id="3_qkgky"]
-[ext_resource type="Resource" uid="uid://dkf2prdlcy567" path="res://moves/water/waterfall.tres" id="4_n0xyt"]
+[ext_resource type="Resource" uid="uid://m506tpvy5i0v" path="res://moves/earth/blast.tres" id="4_n0xyt"]
 [ext_resource type="Texture2D" uid="uid://u0c35urvspaw" path="res://monsters/breed/harius_normal_back.png" id="4_poymp"]
+[ext_resource type="Resource" uid="uid://dh5umek4p7tyh" path="res://moves/water/tsunami.tres" id="5_qkgky"]
 [ext_resource type="Texture2D" uid="uid://buekm34pnlo1k" path="res://monsters/breed/harius_normal_front.png" id="5_xi630"]
-[ext_resource type="Resource" uid="uid://dg2yxkslca4qb" path="res://moves/fire/scorch.tres" id="5_yks30"]
 
 [resource]
 script = ExtResource("1_leps3")
 _monster_name = "Harius"
 _type = 1
-_moves = Array[ExtResource("1_38s86")]([ExtResource("2_n0xyt"), ExtResource("3_qkgky"), ExtResource("4_n0xyt"), ExtResource("5_yks30")])
-_health_points = 60
+_moves = Array[ExtResource("1_38s86")]([ExtResource("2_n0xyt"), ExtResource("3_qkgky"), ExtResource("4_n0xyt"), ExtResource("5_qkgky")])
+_health_points = 120
 _speed = 80
 _normal_texture_front = ExtResource("5_xi630")
 _normal_texture_back = ExtResource("4_poymp")

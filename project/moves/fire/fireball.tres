@@ -9,6 +9,6 @@ _move_name = "Fireball"
 _type = 2
 _attack_power = 100
 _attempts = 1
-_accuracy = 70
+_accuracy = 75
 _move_texture = ExtResource("1_4kuq7")
 metadata/_custom_type_script = "uid://d2wg76v3vg2yt"

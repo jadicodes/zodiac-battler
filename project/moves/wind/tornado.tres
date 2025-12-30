@@ -7,9 +7,9 @@
 script = ExtResource("1_u4gfu")
 _move_name = "Tornado"
 _type = 1
-_attack_power = 60
+_attack_power = 100
 _attempts = 1
-_accuracy = 100
+_accuracy = 60
 _move_texture = ExtResource("1_cahdi")
 _animation_type = 2
 metadata/_custom_type_script = "uid://d2wg76v3vg2yt"

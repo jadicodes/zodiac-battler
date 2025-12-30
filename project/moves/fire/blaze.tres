@@ -7,9 +7,9 @@
 script = ExtResource("1_leshy")
 _move_name = "Blaze"
 _type = 2
-_attack_power = 90
+_attack_power = 80
 _attempts = 1
-_accuracy = 40
+_accuracy = 90
 _move_texture = ExtResource("1_7s2mr")
 _animation_type = 3
 metadata/_custom_type_script = "uid://d2wg76v3vg2yt"

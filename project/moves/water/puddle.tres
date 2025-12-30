@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Move" load_steps=3 format=3 uid="uid://dkf2prdlcy567"]
+
+[ext_resource type="Texture2D" uid="uid://cuusvn7owae2s" path="res://moves/waterball.png" id="1_kn4a2"]
+[ext_resource type="Script" uid="uid://d2wg76v3vg2yt" path="res://moves/move.gd" id="2_ermg1"]
+
+[resource]
+script = ExtResource("2_ermg1")
+_move_name = "Puddle"
+_type = 3
+_attack_power = 50
+_attempts = 1
+_accuracy = 100
+_move_texture = ExtResource("1_kn4a2")
+metadata/_custom_type_script = "uid://d2wg76v3vg2yt"

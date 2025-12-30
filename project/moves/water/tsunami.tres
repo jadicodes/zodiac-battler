@@ -7,9 +7,9 @@
 script = ExtResource("1_yp61o")
 _move_name = "Tsunami"
 _type = 3
-_attack_power = 59
+_attack_power = 70
 _attempts = 1
-_accuracy = 100
+_accuracy = 85
 _move_texture = ExtResource("1_o4yic")
 _animation_type = 2
 metadata/_custom_type_script = "uid://d2wg76v3vg2yt"

@@ -6,8 +6,8 @@
 [resource]
 script = ExtResource("1_ol0yw")
 _move_name = "Quake"
-_attack_power = 70
+_attack_power = 75
 _attempts = 1
-_accuracy = 75
+_accuracy = 90
 _move_texture = ExtResource("1_45py6")
 metadata/_custom_type_script = "uid://d2wg76v3vg2yt"
