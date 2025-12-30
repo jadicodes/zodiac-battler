@@ -7,7 +7,7 @@ const PAUSE_LENGTH: float = 0.25
 
 var _y_threshold := 0.0
 
-var _to_scene: PackedScene
+var _to_scene := ""
 
 
 func _ready() -> void:
@@ -18,7 +18,7 @@ func _process(_delta: float) -> void:
 	_update_y_threshold()
 
 
-func to(scene: PackedScene) -> void:
+func to(scene: String) -> void:
 	_to_scene = scene
 	_start()
 
@@ -36,7 +36,7 @@ func _start() -> void:
 
 
 func _end() -> void:
-	get_tree().change_scene_to_packed(_to_scene)
+	get_tree().change_scene_to_file(_to_scene)
 	var tween := get_tree().create_tween()
 	tween.tween_property(self, "_y_threshold", 0, ANIMATION_LENGTH)
 	tween.play()
@@ -44,7 +44,7 @@ func _end() -> void:
 
 
 func _complete() -> void:
-	_to_scene = null
+	_to_scene = ""
 	_panel.visible = false
 
 
@@ -59,5 +59,7 @@ func _update_colors() -> void:
 
 
 func _update_y_threshold() -> void:
-	if _to_scene:
-		_panel.material.set_shader_parameter("y_threshold", _y_threshold)
+	if _to_scene.is_empty():
+		return
+
+	_panel.material.set_shader_parameter("y_threshold", _y_threshold)

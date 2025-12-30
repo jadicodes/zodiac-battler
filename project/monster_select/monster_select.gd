@@ -1,6 +1,6 @@
 extends Control
 
-const BATTLE_ARENA_SCENE := preload("res://battle_arena/battle_arena.tscn")
+const BATTLE_ARENA_SCENE := "res://battle_arena/battle_arena.tscn"
 
 var _self_monster: Breed
 var _opponent_monster: Breed

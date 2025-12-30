@@ -1,7 +1,7 @@
 extends Control
 
-const BATTLE_ARENA_SCENE := preload("res://battle_arena/battle_arena.tscn")
-const MONSTER_SELECT_SCENE = preload("res://monster_select/monster_select.tscn")
+const BATTLE_ARENA_SCENE := "res://battle_arena/battle_arena.tscn"
+const MONSTER_SELECT_SCENE := "res://monster_select/monster_select.tscn"
 
 const DAMAGE_DIVIDER: float = 10
 const DEFAULT_MULTIPLER: float = 1.0
