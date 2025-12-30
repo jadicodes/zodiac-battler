@@ -57,9 +57,6 @@ theme_override_font_sizes/font_size = 16
 text = "Jeffrey Harmon"
 horizontal_alignment = 1
 
-[node name="Label2" type="Label" parent="Panel/MarginContainer/VBoxContainer"]
-layout_mode = 2
-
 [node name="ThirdPartyAssetsLabel" type="Label" parent="Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
@@ -77,6 +74,16 @@ theme_override_colors/font_hover_color = Color(0.27450982, 0.3372549, 0.64705884
 text = "\"Lines Screen Transition\" by Exuin"
 uri = "https://godotshaders.com/shader/lines-screen-transition/"
 
+[node name="FontButton" type="LinkButton" parent="Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.12156863, 0.09019608, 0.13725491, 1)
+theme_override_colors/font_focus_color = Color(0.27450982, 0.3372549, 0.64705884, 1)
+theme_override_colors/font_pressed_color = Color(0.27450982, 0.3372549, 0.64705884, 1)
+theme_override_colors/font_hover_color = Color(0.27450982, 0.3372549, 0.64705884, 1)
+text = "\"Nb Pixel Font Bundle\" Nimble Beasts"
+uri = "https://nimblebeastscollective.itch.io/nb-pixel-font-bundle"
+
 [node name="CC0Button" type="LinkButton" parent="Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
@@ -84,11 +91,8 @@ theme_override_colors/font_color = Color(0.12156863, 0.09019608, 0.13725491, 1)
 theme_override_colors/font_focus_color = Color(0.27450982, 0.3372549, 0.64705884, 1)
 theme_override_colors/font_pressed_color = Color(0.27450982, 0.3372549, 0.64705884, 1)
 theme_override_colors/font_hover_color = Color(0.27450982, 0.3372549, 0.64705884, 1)
-text = "Licensed under CC0"
+text = "All licensed under CC0"
 uri = "https://creativecommons.org/public-domain/cc0/"
-
-[node name="Label4" type="Label" parent="Panel/MarginContainer/VBoxContainer"]
-layout_mode = 2
 
 [node name="EngineLabel" type="Label" parent="Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
