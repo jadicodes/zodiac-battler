@@ -45,17 +45,25 @@ theme_override_font_sizes/font_size = 48
 text = "Made By"
 horizontal_alignment = 1
 
-[node name="JadiLabel" type="Label" parent="Panel/MarginContainer/VBoxContainer"]
+[node name="JadiLink" type="LinkButton" parent="Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 16
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.12156863, 0.09019608, 0.13725491, 1)
+theme_override_colors/font_focus_color = Color(0.27450982, 0.3372549, 0.64705884, 1)
+theme_override_colors/font_pressed_color = Color(0.27450982, 0.3372549, 0.64705884, 1)
+theme_override_colors/font_hover_color = Color(0.27450982, 0.3372549, 0.64705884, 1)
 text = "Jadi Miller"
-horizontal_alignment = 1
+uri = "https://prismatoad.itch.io/"
 
-[node name="JeffreyLabel" type="Label" parent="Panel/MarginContainer/VBoxContainer"]
+[node name="JeffreyLink" type="LinkButton" parent="Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 16
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.12156863, 0.09019608, 0.13725491, 1)
+theme_override_colors/font_focus_color = Color(0.27450982, 0.3372549, 0.64705884, 1)
+theme_override_colors/font_pressed_color = Color(0.27450982, 0.3372549, 0.64705884, 1)
+theme_override_colors/font_hover_color = Color(0.27450982, 0.3372549, 0.64705884, 1)
 text = "Jeffrey Harmon"
-horizontal_alignment = 1
+uri = "https://jeffreyharmon.dev/"
 
 [node name="ThirdPartyAssetsLabel" type="Label" parent="Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
